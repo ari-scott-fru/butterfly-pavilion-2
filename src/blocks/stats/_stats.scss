@@ -1,0 +1,40 @@
+// ==========================================================================
+// Stats Block
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.stats {
+  padding: 4rem 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-6;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  &__value {
+    color: $color-white;
+    margin-bottom: $spacing-1;
+  }
+
+  &__label {
+    font-size: $font-size-base;
+    color: rgba($color-white, 0.85);
+    margin: 0;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+}

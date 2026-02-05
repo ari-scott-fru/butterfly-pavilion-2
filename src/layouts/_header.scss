@@ -1,0 +1,94 @@
+// ==========================================================================
+// Header Styles
+// ==========================================================================
+@use '../scss/variables' as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-neutral-200;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    gap: $spacing-6;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  &__logo-text {
+    font-family: $font-family-heading;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: $spacing-8;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__cta {
+    display: none;
+
+    @media (min-width: $breakpoint-lg) {
+      display: inline-flex;
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    gap: 5px;
+
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+
+  &__toggle-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $color-neutral-800;
+    border-radius: 2px;
+    transition: transform $transition-base, opacity $transition-base;
+  }
+}

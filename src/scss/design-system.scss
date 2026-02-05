@@ -1,0 +1,351 @@
+// ==========================================================================
+// Design System Page Styles
+// ==========================================================================
+@use 'variables' as *;
+
+// Layout
+.ds-body {
+  display: flex;
+  min-height: 100vh;
+  background-color: $color-neutral-50;
+}
+
+// Sidebar
+.ds-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: $color-white;
+  border-right: 1px solid $color-neutral-200;
+  overflow-y: auto;
+  z-index: 100;
+
+  &__header {
+    padding: $spacing-6;
+    border-bottom: 1px solid $color-neutral-200;
+  }
+
+  &__logo {
+    display: block;
+    font-family: $font-family-heading;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    text-decoration: none;
+    margin-bottom: $spacing-1;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__nav {
+    padding: $spacing-4 0;
+  }
+
+  &__section {
+    padding: $spacing-2 $spacing-6;
+    margin-bottom: $spacing-4;
+  }
+
+  &__title {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: $spacing-2;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    display: block;
+    padding: $spacing-2 $spacing-3;
+    margin: 0 (-$spacing-3);
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    text-decoration: none;
+    border-radius: $border-radius-md;
+    transition: all $transition-fast;
+
+    &:hover {
+      color: $color-text-primary;
+      background-color: $color-neutral-100;
+    }
+
+    &.is-active {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+// Main Content
+.ds-main {
+  flex: 1;
+  margin-left: 280px;
+  padding: $spacing-12 $spacing-16;
+  max-width: 1200px;
+}
+
+// Sections
+.ds-section {
+  margin-bottom: $spacing-16;
+  padding-bottom: $spacing-16;
+  border-bottom: 1px solid $color-neutral-200;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__title {
+    font-family: $font-family-heading;
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-4;
+  }
+
+  &__desc {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-8;
+    max-width: 600px;
+  }
+}
+
+.ds-subsection__title {
+  font-family: $font-family-base;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  margin-top: $spacing-8;
+  margin-bottom: $spacing-4;
+  padding-bottom: $spacing-2;
+  border-bottom: 1px solid $color-neutral-200;
+}
+
+// Color Swatches
+.ds-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: $spacing-4;
+  margin-bottom: $spacing-6;
+}
+
+.ds-color-swatch {
+  background: $color-white;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+
+  &__color {
+    height: 80px;
+  }
+
+  &__info {
+    padding: $spacing-3;
+  }
+
+  &__name {
+    display: block;
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-1;
+  }
+
+  code {
+    font-size: $font-size-sm;
+    background: none;
+    padding: 0;
+    color: $color-text-muted;
+  }
+}
+
+// Typography Samples
+.ds-type-sample {
+  background: $color-white;
+  padding: $spacing-6;
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-4;
+  box-shadow: $shadow-sm;
+
+  code {
+    display: block;
+    margin-top: $spacing-2;
+  }
+
+  &__usage {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    margin-top: $spacing-2;
+    margin-bottom: 0;
+  }
+}
+
+.ds-type-scale {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: $spacing-4;
+    background: $color-white;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-sm;
+
+    h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+    }
+
+    code {
+      font-size: $font-size-sm;
+      color: $color-text-muted;
+      white-space: nowrap;
+    }
+  }
+}
+
+// Spacing Grid
+.ds-spacing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: $spacing-4;
+}
+
+.ds-spacing-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  padding: $spacing-3;
+  background: $color-white;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-sm;
+
+  &__visual {
+    background-color: $color-primary;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  code {
+    font-size: $font-size-sm;
+  }
+
+  span {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+}
+
+// Component Rows
+.ds-component-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-4;
+  padding: $spacing-6 0;
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-4;
+
+
+  &--dark {
+    background: $color-neutral-900;
+  }
+}
+
+// Code Blocks
+.ds-code-block {
+  background: $color-neutral-900;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+
+  pre {
+    margin: 0;
+    padding: $spacing-6;
+    overflow-x: auto;
+
+    code {
+      font-size: $font-size-sm;
+      line-height: 1.6;
+      color: $color-neutral-200;
+    }
+  }
+}
+
+// Block Previews
+.ds-block-preview {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+  margin-bottom: $spacing-6;
+
+  // Reset some block styles for preview
+  .hero {
+    min-height: 400px;
+  }
+}
+
+// Responsive
+@media (max-width: $breakpoint-lg) {
+  .ds-sidebar {
+    width: 240px;
+  }
+
+  .ds-main {
+    margin-left: 240px;
+    padding: $spacing-8;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .ds-body {
+    flex-direction: column;
+  }
+
+  .ds-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid $color-neutral-200;
+
+    &__nav {
+      display: flex;
+      flex-wrap: wrap;
+      padding: $spacing-4;
+    }
+
+    &__section {
+      padding: $spacing-2;
+      margin-bottom: 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-2;
+    }
+  }
+
+  .ds-main {
+    margin-left: 0;
+    padding: $spacing-6;
+  }
+
+  .ds-type-scale__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-2;
+  }
+}

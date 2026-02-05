@@ -1,0 +1,165 @@
+// ==========================================================================
+// Design Tokens / Variables
+// These map directly to WordPress theme.json settings
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// Colors
+// --------------------------------------------------------------------------
+$color-primary: #0452A8;       // Blue - main brand color
+$color-primary-light: #1674DB;
+$color-primary-muted: #D1DDEB;
+$color-primary-extra-light: #E6F0FC;
+
+$color-secondary: #F37B43;     // Orange - accent color
+$color-secondary-light: #FE925F;
+$color-secondary-muted: #F3DDD2;
+$color-secondary-extra-light: #FFF1EB;
+
+$color-tertiary: #469974;      // Green - tertiary color
+$color-tertiary-light: #51B88A;
+$color-tertiary-muted: #D1E5DD;
+$color-tertiary-extra-light: #E6F7F0;
+
+$color-neutral-900: #1A1A1A;
+$color-neutral-800: #3D3D3D;
+$color-neutral-700: #4A4A4A;
+$color-neutral-600: #6B6B6B;
+$color-neutral-500: #8C8C8C;
+$color-neutral-400: #ADADAD;
+$color-neutral-300: #D4D4D4;
+$color-neutral-200: #E8E8E8;
+$color-neutral-100: #f9fbfd;
+$color-neutral-50: #FAFAFA;
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$color-success: #469974;
+$color-warning: #F59E0B;
+$color-error: #EF4444;
+
+// Background colors
+$color-bg-primary: $color-white;
+$color-bg-secondary: $color-neutral-100;
+$color-bg-dark: $color-neutral-900;
+
+// Text colors
+$color-text-primary: $color-neutral-900;
+$color-text-secondary: $color-neutral-800;
+$color-text-muted: $color-neutral-600;
+$color-text-inverse: $color-white;
+
+// Gradients
+$gradient-primary-secondary: linear-gradient(45deg, $color-primary 0%, $color-secondary 100%);
+$gradient-primary-tertiary: linear-gradient(45deg, $color-primary 0%, $color-tertiary 100%);
+
+// --------------------------------------------------------------------------
+// Typography
+// --------------------------------------------------------------------------
+$font-family-base: 'Cabin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Font sizes (using fluid type scale)
+$font-size-xs: 0.75rem;  
+$font-size-sm: 0.875rem; 
+$font-size-base: 1.125rem; 
+$font-size-lg: 1.125rem;  
+$font-size-xl: 1.25rem;    
+$font-size-2xl: 2.25rem; 
+$font-size-3xl: 2.75rem;  
+$font-size-4xl: 3.25rem;    
+$font-size-5xl: 3.85rem;   
+$font-size-6xl: 4.75rem;    
+
+// Font weights
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Line heights
+$line-height-tight: 1.15;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
+
+// --------------------------------------------------------------------------
+// Spacing
+// --------------------------------------------------------------------------
+$spacing-0: 0;
+$spacing-1: 0.25rem;   // 4px
+$spacing-2: 0.5rem;    // 8px
+$spacing-3: 0.75rem;   // 12px
+$spacing-4: 1rem;      // 16px
+$spacing-5: 1.25rem;   // 20px
+$spacing-6: 1.5rem;    // 24px
+$spacing-8: 2rem;      // 32px
+$spacing-10: 2.5rem;   // 40px
+$spacing-12: 3rem;     // 48px
+$spacing-16: 4rem;     // 64px
+$spacing-20: 5rem;     // 80px
+$spacing-24: 6rem;     // 96px
+$spacing-32: 8rem;     // 128px
+
+// Section spacing
+$section-padding-y: $spacing-16;
+$section-padding-y-lg: $spacing-32;
+
+// --------------------------------------------------------------------------
+// Layout
+// --------------------------------------------------------------------------
+$container-max-width: 1600px;
+$container-margin: 24px;          // Margin on sides of container
+
+// Grid
+$grid-columns: 12;
+$grid-gutter: 24px;               // Gap between columns
+
+// --------------------------------------------------------------------------
+// Borders & Radius
+// --------------------------------------------------------------------------
+$border-radius-sm: 0.25rem;   // 4px
+$border-radius-md: 0.5rem;    // 8px
+$border-radius-lg: 0.75rem;   // 12px
+$border-radius-xl: 1rem;      // 16px
+$border-radius-2xl: 1.5rem;   // 24px
+$border-radius-full: 9999px;
+
+$border-width: 1px;
+$border-color: $color-neutral-200;
+
+// --------------------------------------------------------------------------
+// Shadows
+// --------------------------------------------------------------------------
+$shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+$shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+$shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+// --------------------------------------------------------------------------
+// Transitions
+// --------------------------------------------------------------------------
+$transition-fast: 150ms ease;
+$transition-base: 250ms ease;
+$transition-slow: 350ms ease;
+
+// --------------------------------------------------------------------------
+// Breakpoints
+// --------------------------------------------------------------------------
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// --------------------------------------------------------------------------
+// Z-index
+// --------------------------------------------------------------------------
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-tooltip: 600;

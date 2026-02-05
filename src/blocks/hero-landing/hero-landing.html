@@ -1,0 +1,66 @@
+<!--
+  Hero Landing Block
+  WordPress: ACF Block - acf/hero-landing
+
+  ACF Fields:
+  - hero_headline (text)
+  - hero_body (wysiwyg)
+  - hero_primary_button (link)
+  - hero_secondary_button (link)
+  - hero_carousel_column1 (gallery)
+  - hero_carousel_column2 (gallery)
+
+  Usage:
+  <include src="blocks/hero-landing/hero-landing.html">
+    <yield name="headline">Step into a living world brought to life by <span class="text-rotate" data-rotate-words="Butterflies,Beetles,Spiders">Butterflies</span></yield>
+    <yield name="body"><p class="lead">Experience the wonder of thousands of free-flying butterflies.</p></yield>
+    <yield name="primaryButton"><a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a></yield>
+    <yield name="secondaryButton"><a href="/visit.html" class="btn btn--outline btn--lg">Plan Your Visit</a></yield>
+    <yield name="carouselColumn1">
+      <img src="/assets/images/photo1.jpg" alt="Description" class="hero-landing__carousel-image">
+    </yield>
+    <yield name="carouselColumn2">
+      <img src="/assets/images/photo2.jpg" alt="Description" class="hero-landing__carousel-image">
+    </yield>
+  </include>
+-->
+<section class="hero-landing" data-animate="fade-in">
+  <img src="/assets/images/client-images/bee-graphic.png" alt="" class="hero-landing__butterfly" aria-hidden="true">
+  <div class="container">
+    <div class="hero-landing__grid">
+      <div class="hero-landing__content">
+        <h1 class="hero-landing__headline" data-animate="fade-up">
+          <yield name="headline">Welcome to the Butterfly Pavilion</yield>
+        </h1>
+
+        <div class="hero-landing__body" data-animate="fade-up" data-animate-delay="100">
+          <yield name="body">
+            <p class="lead">Experience the wonder of thousands of free-flying butterflies in our tropical conservatory.</p>
+          </yield>
+        </div>
+
+        <div class="hero-landing__actions" data-animate="fade-up" data-animate-delay="200">
+          <yield name="primaryButton">
+            <a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a>
+          </yield>
+          <yield name="secondaryButton">
+            <a href="/visit.html" class="btn btn--outline btn--lg">Learn More</a>
+          </yield>
+        </div>
+      </div>
+
+      <div class="hero-landing__carousel">
+        <div class="hero-landing__carousel-column hero-landing__carousel-column--up">
+          <yield name="carouselColumn1">
+            <!-- Images for column 1 (duplicated for seamless loop) -->
+          </yield>
+        </div>
+        <div class="hero-landing__carousel-column hero-landing__carousel-column--down">
+          <yield name="carouselColumn2">
+            <!-- Images for column 2 (duplicated for seamless loop) -->
+          </yield>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!--
+  Header Component
+  WordPress: This will map to theme/parts/header.html in block theme
+  ACF Fields: logo, nav_items[], cta_button
+-->
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+      <!-- Logo -->
+      <a href="/" class="site-header__logo">
+        <span class="site-header__logo-text">Butterfly Pavilion</span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <ul class="site-header__menu">
+          <li><a href="/" class="site-header__link">Home</a></li>
+          <li><a href="/visit.html" class="site-header__link">Plan Your Visit</a></li>
+          <li><a href="/exhibits.html" class="site-header__link">Exhibits</a></li>
+          <li><a href="/events.html" class="site-header__link">Events</a></li>
+          <li><a href="/about.html" class="site-header__link">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="/tickets.html" class="btn btn--primary site-header__cta">
+        Get Tickets
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="site-header__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="site-header__toggle-bar"></span>
+        <span class="site-header__toggle-bar"></span>
+        <span class="site-header__toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>

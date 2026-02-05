@@ -1,0 +1,43 @@
+// ==========================================================================
+// Main SCSS Entry Point
+// ==========================================================================
+
+// --------------------------------------------------------------------------
+// 1. Variables & Functions (no CSS output)
+// --------------------------------------------------------------------------
+@use 'variables' as *;
+
+// --------------------------------------------------------------------------
+// 2. Base styles
+// --------------------------------------------------------------------------
+@use 'reset';
+@use 'typography';
+@use 'utilities';
+
+// --------------------------------------------------------------------------
+// 3. Components (imported individually for tree-shaking in WordPress)
+// --------------------------------------------------------------------------
+@use '../components/button/button';
+@use '../components/link-arrow/link-arrow';
+@use '../components/card-image/card-image';
+@use '../components/card-image-bottom/card-image-bottom';
+@use '../components/card-icon/card-icon';
+@use '../components/tag/tag';
+
+// --------------------------------------------------------------------------
+// 4. Blocks
+// --------------------------------------------------------------------------
+@use '../blocks/hero/hero';
+@use '../blocks/hero-landing/hero-landing';
+@use '../blocks/cta-banner/cta-banner';
+@use '../blocks/image-text/image-text';
+@use '../blocks/stats/stats';
+@use '../blocks/card-icons/card-icons';
+@use '../blocks/card-images/card-images';
+@use '../blocks/card-image-bottom/card-image-bottom-block';
+
+// --------------------------------------------------------------------------
+// 5. Layout
+// --------------------------------------------------------------------------
+@use '../layouts/header';
+@use '../layouts/footer';

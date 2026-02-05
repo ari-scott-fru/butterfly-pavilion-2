@@ -1,0 +1,65 @@
+// ==========================================================================
+// Tag Component
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-1 $spacing-3;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: $border-radius-full;
+  background-color: $color-neutral-100;
+  color: $color-neutral-700;
+
+  // --------------------------------------------------------------------------
+  // Variants
+  // --------------------------------------------------------------------------
+  &--primary {
+    background-color: $color-primary-extra-light;
+    color: $color-primary;
+  }
+
+  &--secondary {
+    background-color: $color-secondary-extra-light;
+    color: darken($color-secondary, 15%);
+  }
+
+  &--success {
+    background-color: $color-tertiary-extra-light;
+    color: darken($color-success, 15%);
+  }
+
+  &--warning {
+    background-color: rgba($color-warning, 0.15);
+    color: darken($color-warning, 20%);
+  }
+
+  &--error {
+    background-color: rgba($color-error, 0.1);
+    color: $color-error;
+  }
+
+  // --------------------------------------------------------------------------
+  // Sizes
+  // --------------------------------------------------------------------------
+  &--sm {
+    padding: 2px $spacing-2;
+    font-size: 0.625rem;
+  }
+
+  &--lg {
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+  }
+}
+
+// Tag group
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-2;
+}

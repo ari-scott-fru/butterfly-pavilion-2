@@ -1,0 +1,80 @@
+// ==========================================================================
+// Card Icon Component
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.card-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: $spacing-12 $spacing-10;
+  background-color: $color-primary-extra-light;
+  border: 1px solid $color-primary-muted;
+  border-radius: $border-radius-2xl;
+  box-shadow: 0 0 0 1px #1a3c5112, 0 4px 2px #1a3c5105, 0 8px 4px #1a3c5105, 0 16px 8px #1a3c5105, 0 32px 16px #1a3c5105;
+  transition: transform $transition-base;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: $spacing-12;
+    border-radius: $border-radius-lg;
+    background: linear-gradient(45deg, $color-primary 0%, $color-primary-light 100%);
+    color: $color-white;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__title {
+    // Inherits margin from typography
+  }
+
+  &__description {
+    flex: 1;
+  }
+
+  // --------------------------------------------------------------------------
+  // Variants
+  // --------------------------------------------------------------------------
+
+  // Secondary variant
+  &--secondary {
+    background-color: $color-secondary-extra-light;
+    border-color: $color-secondary-muted;
+
+    .card-icon__icon {
+      background: linear-gradient(45deg, $color-secondary 0%, $color-secondary-light 100%);
+      color: $color-white;
+    }
+  }
+
+  // Tertiary variant
+  &--tertiary {
+    background-color: $color-tertiary-extra-light;
+    border-color: $color-tertiary-muted;
+
+    .card-icon__icon {
+      background: linear-gradient(45deg, $color-tertiary 0%, $color-tertiary-light 100%);
+      color: $color-white;
+    }
+  }
+}

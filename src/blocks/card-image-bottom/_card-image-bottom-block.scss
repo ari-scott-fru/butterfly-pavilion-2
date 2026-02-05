@@ -1,0 +1,153 @@
+// ==========================================================================
+// Card Image Bottom Block
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.card-image-bottom-block {
+  position: relative;
+  overflow-x: clip;
+  overflow-y: visible;
+
+  // Override container to allow full-width carousel
+  > .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $spacing-8;
+    margin-bottom: $spacing-12;
+    padding-left: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
+    padding-right: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
+  }
+
+  &__header-left {
+    flex: 1;
+
+    // Hide when empty (both headline and body omitted)
+    &:not(:has(*)) {
+      display: none;
+    }
+  }
+
+  &__headline {
+    margin-bottom: $spacing-3;
+  }
+
+  &__body {
+    color: $color-text-secondary;
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    max-width: 600px;
+    margin: 0;
+  }
+
+  &__header-right {
+    display: flex;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  &__carousel {
+    position: relative;
+    overflow: hidden;
+    // Left-align with container
+    margin-left: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
+    padding-right: $spacing-6;
+    // Extend the overflow area to the right edge of viewport
+    margin-right: calc(-1 * max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6)));
+    padding-right: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
+    // Padding for card shadows
+    padding-top: $spacing-4;
+    padding-bottom: $spacing-10;
+    margin-top: -$spacing-4;
+    margin-bottom: -$spacing-10;
+  }
+
+  &__track {
+    display: flex;
+    gap: $spacing-6;
+    transition: transform $transition-slow;
+
+    .card-image-bottom {
+      flex: 0 0 800px;
+
+      @media (max-width: $breakpoint-lg) {
+        flex: 0 0 600px;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        flex: 0 0 450px;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        flex: 0 0 320px;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    flex-shrink: 0;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: $border-width solid $color-neutral-900;
+    border-radius: 50%;
+    background: $color-white;
+    color: $color-neutral-900;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover {
+      background: $color-neutral-900;
+      color: $color-white;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+
+      &:hover {
+        background: $color-white;
+        color: $color-neutral-900;
+      }
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $color-neutral-300;
+    border: none;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover {
+      background: $color-neutral-600;
+    }
+
+    &.is-active {
+      background: $color-primary;
+      width: 24px;
+      border-radius: 5px;
+    }
+  }
+}

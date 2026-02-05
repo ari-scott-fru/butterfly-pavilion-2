@@ -1,0 +1,18 @@
+<!--
+  Link Arrow Component
+  WordPress: Reusable partial for links with arrow icons
+
+  ACF Fields:
+  - link_text (text)
+  - link_url (url)
+
+  Usage:
+  <include src="components/link-arrow/link-arrow.html">
+    <yield name="url">/path/to/page.html</yield>
+    <yield name="text">Learn More</yield>
+  </include>
+-->
+<a href="<yield name="url">#</yield>" class="link-arrow <yield name="class"></yield>">
+  <yield name="text">Learn More</yield>
+  <svg class="link-arrow__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+</a>

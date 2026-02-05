@@ -1,0 +1,17 @@
+{% from "macros/blocks.njk" import heroLanding %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+  <h1>Test Page</h1>
+  {% include "layouts/header.html" %}
+
+  {{ heroLanding(
+    headline="test",
+    body="<p>This is custom body content passed via macro.</p>"
+  ) }}
+</body>
+</html>

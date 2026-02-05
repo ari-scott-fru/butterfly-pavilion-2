@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <path d="M25 10c-8 0-15 7-15 15s7 15 15 15c4 0 8-2 10-5-2 3-6 5-10 5-8 0-15-7-15-15s7-15 15-15c4 0 8 2 10 5-2-3-6-5-10-5z" fill="#2D5A27"/>
+  <path d="M25 10c8 0 15 7 15 15s-7 15-15 15c-4 0-8-2-10-5 2 3 6 5 10 5 8 0 15-7 15-15s-7-15-15-15c-4 0-8 2-10 5 2-3 6-5 10-5z" fill="#E8A54B"/>
+  <circle cx="25" cy="25" r="4" fill="#2D5A27"/>
+  <text x="55" y="32" font-family="Montserrat, sans-serif" font-size="18" font-weight="600" fill="#2D5A27">Butterfly Pavilion</text>
+</svg>

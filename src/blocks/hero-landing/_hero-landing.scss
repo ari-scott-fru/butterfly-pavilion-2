@@ -1,0 +1,200 @@
+// ==========================================================================
+// Hero Landing Block
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.hero-landing {
+  position: relative;
+  background-color: $color-white;
+  overflow: hidden;
+
+  &__butterfly {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    pointer-events: none;
+    // opacity: 0.7;
+    // left:-12%;
+    top:-7%;
+    width:240px;
+    transform: rotate(45deg);
+
+
+    @media (min-width: 1990px) {
+     top:4%;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-12;
+    align-items: center;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 5fr 6fr;
+      gap: calc(100% / 12); // 1 column of space
+    }
+  }
+
+  &__content {
+    margin: 0;
+    text-align: left;
+  }
+
+  &__headline {
+    .text-rotate {
+      color: $color-primary;
+      font-weight: $font-weight-bold;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+  }
+
+  &__body {
+    font-size: $font-size-lg;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-12;
+
+    p {
+      margin-bottom: $spacing-4;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: $spacing-4;
+  }
+
+  // --------------------------------------------------------------------------
+  // Image Carousel
+  // --------------------------------------------------------------------------
+  &__carousel {
+    display: none;
+    position: relative;
+    height: 900px;
+    gap: $spacing-4;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+    }
+  }
+
+  &__carousel-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    // Allow column to be taller than container
+    height: fit-content;
+    flex-shrink: 0;
+
+    &--up {
+      animation-name: scroll-up;
+      animation-duration: 30s;
+    }
+
+    &--down {
+      animation-name: scroll-down;
+      animation-duration: 36s;
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: $border-radius-lg;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    flex-shrink: 0;
+  }
+
+  // --------------------------------------------------------------------------
+  // Variants
+  // --------------------------------------------------------------------------
+  &--dark {
+    background-color: $color-bg-dark;
+
+    .hero-landing__headline {
+      color: $color-text-inverse;
+    }
+
+    .hero-landing__body {
+      color: $color-neutral-300;
+    }
+  }
+
+  &--primary {
+    background-color: $color-primary;
+
+    .hero-landing__headline {
+      color: $color-text-inverse;
+    }
+
+    .hero-landing__body {
+      color: rgba($color-white, 0.9);
+    }
+  }
+
+  &--centered {
+    .hero-landing__content {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-landing__actions {
+      justify-content: center;
+    }
+  }
+
+  &--compact {
+    padding: $spacing-16 0;
+  }
+
+  &--large {
+    padding: $spacing-32 0;
+  }
+}
+
+// Keyframe animations for carousel
+// Use calc to account for gap spacing (half gap adjustment for seamless loop)
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-50% - #{$spacing-4 / 2}));
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(calc(-50% - #{$spacing-4 / 2}));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

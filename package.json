@@ -1,0 +1,23 @@
+{
+  "name": "denver-butterfly-pavilion",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "nunjucks": "^3.2.4",
+    "posthtml": "^0.16.6",
+    "posthtml-extend": "^0.6.5",
+    "posthtml-include": "^2.0.1",
+    "posthtml-modules": "^0.9.1",
+    "sass": "^1.77.0",
+    "vite": "^5.4.0",
+    "vite-plugin-nunjucks": "^0.2.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
+  }
+}

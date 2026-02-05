@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <rect width="600" height="600" fill="#E8E8E8"/>
+  <rect x="200" y="200" width="200" height="200" rx="8" fill="#D4D4D4"/>
+  <path d="M250 300l30-40 20 25 40-55 60 80H250z" fill="#ADADAD"/>
+  <circle cx="280" cy="260" r="15" fill="#ADADAD"/>
+  <text x="300" y="370" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#8C8C8C">600 x 600</text>
+</svg>

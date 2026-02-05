@@ -1,0 +1,39 @@
+<!--
+  CTA Banner Block
+  WordPress: ACF Block - acf/cta-banner
+
+  ACF Fields:
+  - cta_headline (text)
+  - cta_description (textarea)
+  - cta_button (link)
+
+  Usage:
+  <include src="blocks/cta-banner/cta-banner.html">
+    <yield name="headline">Ready to explore?</yield>
+    <yield name="description">Book your tickets today...</yield>
+    <yield name="button"><a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a></yield>
+  </include>
+
+  For variants, use separate block files:
+  - cta-banner-secondary.html
+  - cta-banner-dark.html
+-->
+<section class="cta-banner" data-animate="fade-in">
+  <div class="container">
+    <div class="cta-banner__inner">
+      <div class="cta-banner__content">
+        <h2 class="cta-banner__headline">
+          <yield name="headline">Ready to explore?</yield>
+        </h2>
+        <p class="cta-banner__description">
+          <yield name="description">Book your tickets today and discover the wonder of butterflies. Special group rates available.</yield>
+        </p>
+      </div>
+      <div class="cta-banner__action">
+        <yield name="button">
+          <a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a>
+        </yield>
+      </div>
+    </div>
+  </div>
+</section>

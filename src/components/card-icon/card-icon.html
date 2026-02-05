@@ -1,0 +1,40 @@
+<!--
+  Card Icon Component
+  WordPress: Reusable partial for feature highlights, services, benefits
+
+  ACF Fields:
+  - card_icon (text/svg or icon class)
+  - card_icon_title (text)
+  - card_icon_description (textarea)
+  - card_icon_link (link) - optional
+
+  Usage:
+  <include src="components/card-icon/card-icon.html">
+    <yield name="icon"><svg>...</svg></yield>
+    <yield name="title">Feature Title</yield>
+    <yield name="description">Feature description text goes here.</yield>
+    <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="url">/path</yield><yield name="text">Learn More</yield></include></yield>
+  </include>
+-->
+<article class="card-icon <yield name="class"></yield>" <yield name="animate"></yield>
+  <div class="card-icon__icon">
+    <yield name="icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 16v-4"></path>
+        <path d="M12 8h.01"></path>
+      </svg>
+    </yield>
+  </div>
+  <div class="card-icon__content">
+    <h3 class="card-icon__title h5">
+      <yield name="title">Feature Title</yield>
+    </h3>
+    <p class="card-icon__description">
+      <yield name="description">Feature description text goes here.</yield>
+    </p>
+    <div class="link-arrow-wrapper">
+      <yield name="link"></yield>
+    </div>
+  </div>
+</article>

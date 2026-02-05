@@ -1,0 +1,17 @@
+<!--
+  Tag Component
+  WordPress: Reusable partial for categories, labels, badges
+
+  ACF Fields:
+  - tag_text (text)
+  - tag_style (select: default, primary, secondary)
+
+  Usage:
+  <include src="components/tag/tag.html">
+    <yield name="text">Tag</yield>
+    <yield name="class"></yield>
+  </include>
+-->
+<span class="tag <yield name="class"></yield>">
+  <yield name="text">Tag</yield>
+</span>

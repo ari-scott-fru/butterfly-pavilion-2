@@ -1,0 +1,49 @@
+<!--
+  Image + Text Block
+  WordPress: ACF Block - acf/image-text
+
+  ACF Fields:
+  - it_image (image)
+  - it_headline (text)
+  - it_content (wysiwyg)
+  - it_button (link)
+
+  Usage (with section padding):
+  <include src="blocks/image-text/image-text.html">
+    <yield name="class">section</yield>
+    <yield name="image"><img src="https://placehold.co/600x500" alt="Description" class="image-text__image" loading="lazy"></yield>
+    <yield name="headline">Section Headline</yield>
+    <yield name="content"><p>Your content here...</p></yield>
+    <yield name="button"><a href="#" class="btn btn--primary">Learn More</a></yield>
+  </include>
+
+  Note: class yield adds utility classes (e.g., "section" for padding)
+  For reversed layout, use: image-text-reversed.html
+-->
+<section class="image-text <yield name="class"></yield>" data-animate="fade-in">
+  <div class="container">
+    <div class="image-text__grid">
+      <div class="image-text__media" data-animate="fade-right">
+        <yield name="image">
+          <img src="https://placehold.co/600x500" alt="Featured image" class="image-text__image" loading="lazy">
+        </yield>
+      </div>
+
+      <div class="image-text__content" data-animate="fade-left">
+        <h2 class="image-text__headline">
+          <yield name="headline">Section Headline</yield>
+        </h2>
+
+        <div class="image-text__body">
+          <yield name="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </yield>
+        </div>
+
+        <yield name="button">
+          <a href="#" class="btn btn--lg btn--primary">Learn More</a>
+        </yield>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<!--
+  Card Image Bottom Block
+  WordPress: ACF Block - acf/card-image-bottom-block
+
+  ACF Fields:
+  - block_headline (text)
+  - block_body (textarea) - optional
+  - cards (repeater)
+    - card_tag (text)
+    - card_title (text)
+    - card_description (textarea)
+    - card_button_text (text)
+    - card_button_url (url)
+    - card_image (image)
+
+  Usage (with section padding):
+  <include src="blocks/card-image-bottom/card-image-bottom-block.html">
+    <yield name="class">section</yield>
+    <yield name="headline">Upcoming Events</yield>
+    <yield name="body"><p class="card-image-bottom-block__body">Join us for special programs.</p></yield>
+    <yield name="cards">...</yield>
+  </include>
+
+  Usage (without padding or body):
+  <include src="blocks/card-image-bottom/card-image-bottom-block.html">
+    <yield name="headline">Upcoming Events</yield>
+    <yield name="cards">...</yield>
+  </include>
+
+  Note: class yield adds utility classes (e.g., "section" for padding), body is optional
+-->
+<section class="card-image-bottom-block <yield name="class"></yield>" data-carousel>
+  <div class="container">
+    <div class="card-image-bottom-block__header">
+      <div class="card-image-bottom-block__header-left">
+        <h2 class="card-image-bottom-block__headline">
+          <yield name="headline">Block Headline</yield>
+        </h2>
+        <yield name="body" optional>
+          <p class="card-image-bottom-block__body">Optional body copy for the block goes here.</p>
+        </yield>
+      </div>
+      <div class="card-image-bottom-block__header-right">
+        <div class="card-image-bottom-block__nav">
+          <button class="card-image-bottom-block__arrow card-image-bottom-block__arrow--prev" data-carousel-prev aria-label="Previous">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="card-image-bottom-block__pagination" data-carousel-pagination></div>
+          <button class="card-image-bottom-block__arrow card-image-bottom-block__arrow--next" data-carousel-next aria-label="Next">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-image-bottom-block__carousel">
+      <div class="card-image-bottom-block__track" data-carousel-track>
+        <yield name="cards">
+          <!-- Cards go here -->
+        </yield>
+      </div>
+    </div>
+  </div>
+</section>

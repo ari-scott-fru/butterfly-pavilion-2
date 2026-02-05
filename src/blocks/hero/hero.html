@@ -1,0 +1,48 @@
+<!--
+  Hero Block
+  WordPress: ACF Block - acf/hero
+
+  ACF Fields:
+  - hero_headline (text)
+  - hero_subheadline (textarea)
+  - hero_background_image (image)
+  - hero_buttons (flexible content or group)
+
+  Usage:
+  <include src="blocks/hero/hero.html">
+    <yield name="image_url">https://placehold.co/1920x800</yield>
+    <yield name="headline">Welcome to the Butterfly Pavilion</yield>
+    <yield name="subheadline">Discover the magic of butterflies...</yield>
+    <yield name="buttons">
+      <a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a>
+      <a href="/visit.html" class="btn btn--outline-white btn--lg">Plan Your Visit</a>
+    </yield>
+  </include>
+-->
+<section class="hero" data-animate="fade-in">
+  <div class="hero__background">
+    <yield name="image">
+      <img src="https://placehold.co/1920x800" alt="" class="hero__background-image" loading="eager">
+    </yield>
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero__content">
+      <h1 class="hero__headline" data-animate="fade-up">
+        <yield name="headline">Welcome to the Butterfly Pavilion</yield>
+      </h1>
+
+      <p class="hero__subheadline" data-animate="fade-up" data-animate-delay="100">
+        <yield name="subheadline">Experience the wonder of thousands of free-flying butterflies in our tropical conservatory.</yield>
+      </p>
+
+      <div class="hero__actions" data-animate="fade-up" data-animate-delay="200">
+        <yield name="buttons">
+          <a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a>
+          <a href="/visit.html" class="btn btn--outline-white btn--lg">Plan Your Visit</a>
+        </yield>
+      </div>
+    </div>
+  </div>
+</section>

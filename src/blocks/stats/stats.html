@@ -1,0 +1,32 @@
+<!--
+  Stats Block
+  WordPress: ACF Block - acf/stats
+
+  ACF Fields:
+  - stats_items (repeater)
+    - stat_value (text)
+    - stat_label (text)
+
+  Usage:
+  <include src="blocks/stats/stats.html">
+    <yield name="class">bg-gradient-primary-tertiary</yield>
+    <yield name="items">
+      <div class="stats__item">
+        <div class="stats__value h3">1.6K+</div>
+        <p class="stats__label">Live Butterflies</p>
+      </div>
+    </yield>
+  </include>
+-->
+<section class="stats <yield name="class">bg-gradient-primary-tertiary</yield>">
+  <div class="container">
+    <div class="stats__grid">
+      <yield name="items">
+        <div class="stats__item" data-animate="fade-up">
+          <div class="stats__value h3">100+</div>
+          <p class="stats__label">Stat Label</p>
+        </div>
+      </yield>
+    </div>
+  </div>
+</section>

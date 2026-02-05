@@ -1,0 +1,84 @@
+// ==========================================================================
+// CTA Banner Block
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.cta-banner {
+  background-color: $color-primary;
+  color: $color-white;
+  padding: 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-6;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: $spacing-8;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__headline {
+    margin-bottom: $spacing-3;
+    color: $color-white;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 600px;
+  }
+
+  &__action {
+    flex-shrink: 0;
+  }
+
+  // --------------------------------------------------------------------------
+  // Variants
+  // --------------------------------------------------------------------------
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-neutral-900;
+
+    .cta-banner__headline {
+      color: $color-neutral-900;
+    }
+
+    .btn--primary {
+      background-color: $color-neutral-900;
+      border-color: $color-neutral-900;
+      color: $color-white;
+
+      &:hover {
+        background-color: $color-neutral-800;
+        border-color: $color-neutral-800;
+      }
+    }
+  }
+
+  &--dark {
+    background-color: $color-neutral-900;
+  }
+
+  &--centered {
+    text-align: center;
+
+    .cta-banner__inner {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-banner__description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

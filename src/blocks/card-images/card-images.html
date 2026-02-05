@@ -1,0 +1,57 @@
+<!--
+  Card Images Block
+  WordPress: ACF Block - acf/card-images
+
+  ACF Fields:
+  - card_images_headline (text) - optional
+  - card_images_description (textarea) - optional
+  - card_images_items (repeater)
+    - item_image (image)
+    - item_title (text)
+    - item_description (textarea)
+    - item_link (link)
+
+  Usage (with section padding and header):
+  <include src="blocks/card-images/card-images.html">
+    <yield name="class">section</yield>
+    <yield name="headline">Featured Content</yield>
+    <yield name="description">Explore our latest offerings.</yield>
+    <yield name="items">
+      <include src="components/card-image/card-image.html">...</include>
+    </yield>
+  </include>
+
+  Usage (without padding or header):
+  <include src="blocks/card-images/card-images.html">
+    <yield name="items">
+      <include src="components/card-image/card-image.html">...</include>
+    </yield>
+  </include>
+
+  Note: class yield adds utility classes (e.g., "section" for padding), headline/description are optional
+-->
+<section class="card-images <yield name="class"></yield>">
+  <div class="container">
+    <div class="card-images__header">
+      <h2 class="card-images__headline">
+        <yield name="headline"></yield>
+      </h2>
+      <p class="card-images__description">
+        <yield name="description"></yield>
+      </p>
+    </div>
+    <div class="card-images__grid">
+      <yield name="items">
+        <article class="card-image">
+          <div class="card-image__image-wrapper">
+            <img src="https://placehold.co/400x300" alt="Card image" class="card-image__image" loading="lazy">
+          </div>
+          <div class="card-image__content">
+            <h3 class="card-image__title">Card Title</h3>
+            <p class="card-image__description">Card description goes here.</p>
+          </div>
+        </article>
+      </yield>
+    </div>
+  </div>
+</section>

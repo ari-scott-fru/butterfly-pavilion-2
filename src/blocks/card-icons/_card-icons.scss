@@ -1,0 +1,120 @@
+// ==========================================================================
+// Card Icons Block
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.card-icons {
+  position: relative;
+
+  &__butterfly {
+    position: absolute;
+    right: 25%;
+    top: 60%;
+    width: 240px;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(-65deg);
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-24;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 2fr 3fr;
+      align-items: start;
+    }
+  }
+
+  &__image {
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    position: relative;
+
+    @media (min-width: $breakpoint-lg) {
+      position: sticky;
+      top: calc(80px + $spacing-6); // Header height + spacing
+    }
+
+    // Hide when empty
+    &:not(:has(*)) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    // Stack images for fade effect
+    &:not(:first-child) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-8;
+  }
+
+  &__header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+
+    // Hide header when it has no content (both headline and description omitted)
+    &:not(:has(*)) {
+      display: none;
+    }
+  }
+
+  &__headline {
+    margin-bottom: $spacing-4;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__description {
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+    margin: 0;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(6, 1fr);
+
+      // Top row cards span 3 columns each (50%)
+      .card-icon:nth-child(1),
+      .card-icon:nth-child(2) {
+        grid-column: span 3;
+      }
+
+      // Bottom card spans 4 columns (66.67%) aligned right
+      .card-icon:nth-child(3) {
+        grid-column: 3 / 7;
+      }
+    }
+  }
+}

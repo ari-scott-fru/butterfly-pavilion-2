@@ -17,7 +17,7 @@
     }
 
     @media (min-width: $breakpoint-lg) {
-      gap: $spacing-24;
+      gap: $spacing-32;
     }
   }
 
@@ -29,8 +29,18 @@
 
   &__image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
+    min-height: 400px;
+
+    @media (min-width: $breakpoint-md) {
+      min-height: 500px;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      min-height: 600px;
+    }
   }
 
   &__content {
@@ -45,12 +55,6 @@
 
   &__body {
     margin-bottom: $spacing-8;
-
-    p {
-      font-size: $font-size-lg;
-      line-height: $line-height-relaxed;
-      color: $color-text-secondary;
-    }
   }
 
   // --------------------------------------------------------------------------

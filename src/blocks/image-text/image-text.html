@@ -7,18 +7,21 @@
   - it_headline (text)
   - it_content (wysiwyg)
   - it_button (link)
+  - it_reversed (true_false)
 
-  Usage (with section padding):
+  Usage:
   <include src="blocks/image-text/image-text.html">
     <yield name="class">section</yield>
     <yield name="image"><img src="https://placehold.co/600x500" alt="Description" class="image-text__image" loading="lazy"></yield>
     <yield name="headline">Section Headline</yield>
     <yield name="content"><p>Your content here...</p></yield>
-    <yield name="button"><a href="#" class="btn btn--primary">Learn More</a></yield>
+    <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--primary</yield></include></yield>
   </include>
 
-  Note: class yield adds utility classes (e.g., "section" for padding)
-  For reversed layout, use: image-text-reversed.html
+  Class variants:
+  - image-text--reversed: Flips image to right side
+  - bg-light: Light background
+  - section: Adds section padding
 -->
 <section class="image-text <yield name="class"></yield>" data-animate="fade-in">
   <div class="container">
@@ -41,7 +44,11 @@
         </div>
 
         <yield name="button">
-          <a href="#" class="btn btn--lg btn--primary">Learn More</a>
+          <include src="components/button/button.html">
+            <yield name="text">Learn More</yield>
+            <yield name="url">#</yield>
+            <yield name="class">btn--primary</yield>
+          </include>
         </yield>
       </div>
     </div>

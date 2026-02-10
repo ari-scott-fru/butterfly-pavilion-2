@@ -1,0 +1,106 @@
+<!--
+  Card Events Block
+  WordPress: ACF Block - acf/card-events
+
+  ACF Fields:
+  - card_events_headline (text) - optional
+  - card_events_description (textarea) - optional
+  - card_events_cta_text (text) - optional
+  - card_events_cta_url (url) - optional
+  - card_events_items (repeater)
+    - event_image (image)
+    - event_category (select: adult, family, kids)
+    - event_title (text)
+    - event_time (text)
+    - event_date (text)
+    - event_button_text (text)
+    - event_button_url (url)
+
+  Usage:
+  <include src="blocks/card-events/card-events.html">
+    <yield name="headline">Upcoming Events</yield>
+    <yield name="description">Join us for educational programs and family fun.</yield>
+    <yield name="cta"><include src="components/button/button.html"><yield name="text">View All Events</yield><yield name="url">/events</yield></include></yield>
+    <yield name="items">...</yield>
+  </include>
+-->
+<section class="card-events <yield name="class"></yield>">
+  <div class="container">
+    <yield name="header">
+      <div class="card-events__header">
+        <h2 class="card-events__headline h2" data-animate="fade-up">
+          <yield name="headline">Upcoming Events</yield>
+        </h2>
+        <p class="card-events__description body-lg" data-animate="fade-up" data-animate-delay="100">
+          <yield name="description">Join us for educational programs, family activities, and special events throughout the year.</yield>
+        </p>
+        <div class="card-events__cta" data-animate="fade-up" data-animate-delay="200">
+          <yield name="cta"></yield>
+        </div>
+      </div>
+    </yield>
+    <div class="card-events__grid" data-animate-stagger="0.1">
+      <yield name="items">
+        <!-- Default 6 cards for 3x3 bento layout -->
+        <div class="card-events__row card-events__row--1">
+          <div class="card-events__item card-events__item--1" data-animate="fade-up">
+            <include src="components/card-event/card-event.html">
+              <yield name="class">card-event--primary</yield>
+              <yield name="category">Adult Program</yield>
+              <yield name="title">Photography Workshop</yield>
+              <yield name="time">6:00 PM - 8:00 PM</yield>
+              <yield name="date">Friday, March 21</yield>
+            </include>
+          </div>
+          <div class="card-events__item card-events__item--2" data-animate="fade-up">
+            <include src="components/card-event/card-event.html">
+              <yield name="class">card-event--secondary</yield>
+              <yield name="category">Family Program</yield>
+              <yield name="title">Butterfly Walk</yield>
+              <yield name="time">10:00 AM - 12:00 PM</yield>
+              <yield name="date">Saturday, March 22</yield>
+            </include>
+          </div>
+          <div class="card-events__item card-events__item--3" data-animate="fade-up">
+            <include src="components/card-event/card-event.html">
+              <yield name="class">card-event--tertiary</yield>
+              <yield name="category">Kids Program</yield>
+              <yield name="title">Bug Camp</yield>
+              <yield name="time">9:00 AM - 3:00 PM</yield>
+              <yield name="date">Mon - Fri</yield>
+            </include>
+          </div>
+        </div>
+        <div class="card-events__row card-events__row--2">
+          <div class="card-events__item card-events__item--4" data-animate="fade-up">
+            <include src="components/card-event/card-event.html">
+              <yield name="class">card-event--tertiary</yield>
+              <yield name="category">Kids Program</yield>
+              <yield name="title">Nature Explorers</yield>
+              <yield name="time">10:00 AM - 12:00 PM</yield>
+              <yield name="date">Saturdays</yield>
+            </include>
+          </div>
+          <div class="card-events__item card-events__item--5" data-animate="fade-up">
+            <include src="components/card-event/card-event.html">
+              <yield name="class">card-event--primary</yield>
+              <yield name="category">Adult Program</yield>
+              <yield name="title">Wine & Wings Evening</yield>
+              <yield name="time">7:00 PM - 9:00 PM</yield>
+              <yield name="date">Friday, April 4</yield>
+            </include>
+          </div>
+          <div class="card-events__item card-events__item--6" data-animate="fade-up">
+            <include src="components/card-event/card-event.html">
+              <yield name="class">card-event--secondary</yield>
+              <yield name="category">Family Program</yield>
+              <yield name="title">Spring Safari</yield>
+              <yield name="time">10:00 AM - 4:00 PM</yield>
+              <yield name="date">March 24 - 28</yield>
+            </include>
+          </div>
+        </div>
+      </yield>
+    </div>
+  </div>
+</section>

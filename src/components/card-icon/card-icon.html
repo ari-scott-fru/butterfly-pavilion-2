@@ -6,17 +6,21 @@
   - card_icon (text/svg or icon class)
   - card_icon_title (text)
   - card_icon_description (textarea)
-  - card_icon_link (link) - optional
+  - card_icon_button (link) - optional
 
   Usage:
   <include src="components/card-icon/card-icon.html">
     <yield name="icon"><svg>...</svg></yield>
     <yield name="title">Feature Title</yield>
     <yield name="description">Feature description text goes here.</yield>
-    <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="url">/path</yield><yield name="text">Learn More</yield></include></yield>
+    <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
   </include>
+
+  Class variants:
+  - card-icon--secondary: Orange theme with secondary text color on button
+  - card-icon--tertiary: Green theme with tertiary text color on button
 -->
-<article class="card-icon <yield name="class"></yield>" <yield name="animate"></yield>
+<article class="card-icon <yield name="class"></yield>" data-animate="fade-in">
   <div class="card-icon__icon">
     <yield name="icon">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -33,8 +37,14 @@
     <p class="card-icon__description">
       <yield name="description">Feature description text goes here.</yield>
     </p>
-    <div class="link-arrow-wrapper">
-      <yield name="link"></yield>
+    <div class="card-icon__action">
+      <yield name="button">
+        <include src="components/button/button.html">
+          <yield name="text">Learn More</yield>
+          <yield name="url">#</yield>
+          <yield name="class">btn--white</yield>
+        </include>
+      </yield>
     </div>
   </div>
 </article>

@@ -80,9 +80,15 @@ export function initScrollAnimations() {
   }
 
   // Find all elements with data-animate attribute
+  // Exclude elements inside stagger containers (they're handled by initStaggerAnimations)
   const animatedElements = document.querySelectorAll('[data-animate]');
 
   animatedElements.forEach(element => {
+    // Skip if this element is inside a stagger container
+    if (element.closest('[data-animate-stagger]')) {
+      return;
+    }
+
     const animationType = element.dataset.animate;
     const animation = animations[animationType];
 
@@ -120,6 +126,9 @@ export function initScrollAnimations() {
 
   // Handle butterfly fly-in animation
   initButterflyAnimation();
+
+  // Handle testimonial marquee stagger animation
+  initMarqueeStaggerAnimation();
 }
 
 /**
@@ -220,6 +229,7 @@ function initButterflyAnimation() {
 
     gsap.to(butterfly, {
       right: '40%',
+      opacity: 1,
       duration: 1,
       ease: 'power2.out',
       scrollTrigger: {
@@ -237,6 +247,60 @@ function initButterflyAnimation() {
  */
 export function refreshScrollTrigger() {
   ScrollTrigger.refresh();
+}
+
+/**
+ * Initialize marquee stagger animation for testimonials
+ * Images fade in with stagger effect when block comes into view
+ */
+function initMarqueeStaggerAnimation() {
+  const marquees = document.querySelectorAll('[data-animate-marquee-stagger]');
+
+  marquees.forEach(marquee => {
+    // Only animate the first row's items (second row is duplicate for seamless loop)
+    const firstRow = marquee.querySelector('.testimonials__marquee-row');
+    if (!firstRow) return;
+
+    const items = firstRow.querySelectorAll('.testimonials__marquee-item');
+    if (items.length === 0) return;
+
+    // Set initial state - hidden
+    gsap.set(items, { opacity: 0, y: 30 });
+
+    // Also hide second row items initially
+    const secondRow = marquee.querySelectorAll('.testimonials__marquee-row')[1];
+    if (secondRow) {
+      const secondRowItems = secondRow.querySelectorAll('.testimonials__marquee-item');
+      gsap.set(secondRowItems, { opacity: 0, y: 30 });
+    }
+
+    // Create staggered fade-in animation
+    gsap.to(items, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: marquee,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      },
+      onComplete: () => {
+        // Fade in second row after first row completes
+        if (secondRow) {
+          const secondRowItems = secondRow.querySelectorAll('.testimonials__marquee-item');
+          gsap.to(secondRowItems, {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            stagger: 0.05,
+            ease: 'power2.out'
+          });
+        }
+      }
+    });
+  });
 }
 
 /**

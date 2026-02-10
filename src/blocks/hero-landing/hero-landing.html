@@ -14,8 +14,8 @@
   <include src="blocks/hero-landing/hero-landing.html">
     <yield name="headline">Step into a living world brought to life by <span class="text-rotate" data-rotate-words="Butterflies,Beetles,Spiders">Butterflies</span></yield>
     <yield name="body"><p class="lead">Experience the wonder of thousands of free-flying butterflies.</p></yield>
-    <yield name="primaryButton"><include src="components/button/button.html"><yield name="text">Get Tickets</yield><yield name="url">/tickets.html</yield><yield name="class">btn--primary btn--lg</yield></include></yield>
-    <yield name="secondaryButton"><include src="components/button/button.html"><yield name="text">Plan Your Visit</yield><yield name="url">/visit.html</yield><yield name="class">btn--outline btn--lg</yield></include></yield>
+    <yield name="primaryButton"><include src="components/button/button.html"><yield name="text">Get Tickets</yield><yield name="url">/tickets.html</yield><yield name="class">btn--primary</yield></include></yield>
+    <yield name="secondaryButton"><include src="components/button/button.html"><yield name="text">Plan Your Visit</yield><yield name="url">/visit.html</yield><yield name="class">btn--outline</yield></include></yield>
     <yield name="carouselColumn1">
       <img src="/assets/images/photo1.jpg" alt="Description" class="hero-landing__carousel-image">
     </yield>
@@ -39,19 +39,19 @@
           </yield>
         </div>
 
-        <div class="hero-landing__actions" data-animate="fade-up" data-animate-delay="200">
+        <div class="hero-landing__actions">
           <yield name="primaryButton">
             <include src="components/button/button.html">
               <yield name="text">Get Tickets</yield>
               <yield name="url">/tickets.html</yield>
-              <yield name="class">btn--primary btn--lg</yield>
+              <yield name="class">btn--primary</yield>
             </include>
           </yield>
           <yield name="secondaryButton">
             <include src="components/button/button.html">
               <yield name="text">Learn More</yield>
               <yield name="url">/visit.html</yield>
-              <yield name="class">btn--outline btn--lg</yield>
+              <yield name="class">btn--outline</yield>
             </include>
           </yield>
         </div>

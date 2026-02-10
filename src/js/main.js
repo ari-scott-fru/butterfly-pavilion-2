@@ -8,6 +8,7 @@
 import { initScrollAnimations, refreshScrollTrigger } from './animations/scroll-animations.js';
 import { initInteractiveAnimations, initParallax, initCounters } from './animations/interactive.js';
 import { initCarousels } from './animations/carousel.js';
+import { initTestimonials } from './animations/testimonials.js';
 
 /**
  * Text Rotation Animation
@@ -93,6 +94,9 @@ function init() {
 
   // Initialize carousels
   initCarousels();
+
+  // Initialize testimonials pagination
+  initTestimonials();
 
   console.log('🦋 Butterfly Pavilion initialized');
 }

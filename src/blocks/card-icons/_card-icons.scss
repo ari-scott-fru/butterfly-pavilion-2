@@ -14,6 +14,7 @@
     z-index: 0;
     pointer-events: none;
     transform: rotate(-65deg);
+    opacity: 0; // Hidden initially, animated in by JS
 
     @media (max-width: $breakpoint-md) {
       display: none;

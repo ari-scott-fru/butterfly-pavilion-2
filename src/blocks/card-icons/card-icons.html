@@ -3,7 +3,7 @@
   WordPress: ACF Block - acf/card-icons
 
   ACF Fields:
-  - card_icons_images (gallery) - optional left images that fade on scroll
+  - card_icons_images (gallery) - required left images that fade on scroll
   - card_icons_headline (text) - optional
   - card_icons_description (textarea) - optional
   - card_icons_items (repeater)
@@ -12,21 +12,17 @@
     - item_description (textarea)
     - item_link (link)
 
-  Usage (with images that fade on scroll):
+  Usage:
   <include src="blocks/card-icons/card-icons.html">
     <yield name="images">
       <img src="image1.jpg" alt="" class="card-icons__img">
       <img src="image2.jpg" alt="" class="card-icons__img">
     </yield>
+    <yield name="headline">Section Title</yield>
+    <yield name="description">Section description text.</yield>
     <yield name="items">
       <include src="components/card-icon/card-icon.html">...</include>
-      <include src="components/card-icon/card-icon.html">...</include>
     </yield>
-  </include>
-
-  Usage (without image - cards only):
-  <include src="blocks/card-icons/card-icons.html">
-    <yield name="items">...</yield>
   </include>
 -->
 <section class="card-icons <yield name="class"></yield>">
@@ -34,7 +30,11 @@
   <div class="container">
     <div class="card-icons__layout">
       <div class="card-icons__image" data-animate-image-fade>
-        <yield name="images"></yield>
+        <yield name="images">
+          <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Butterfly" class="card-icons__img">
+          <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Butterfly exhibit" class="card-icons__img">
+          <img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Colorful butterfly" class="card-icons__img">
+        </yield>
       </div>
       <div class="card-icons__content">
         <div class="card-icons__header">
@@ -43,7 +43,7 @@
         </div>
         <div class="card-icons__grid">
           <yield name="items">
-            <article class="card-icon">
+            <article class="card-icon" data-animate="fade-in">
               <div class="card-icon__icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>

@@ -52,17 +52,17 @@ h6,
 
 h1,
 .h1 {
-  font-size: clamp($font-size-4xl, 5vw, $font-size-6xl);
+  font-size: clamp(3rem, 5vw, 4.5rem); // 48px - 72px (reduced by 4px from original)
 }
 
 h2,
 .h2 {
-  font-size: clamp($font-size-3xl, 4vw, $font-size-5xl);
+  font-size: clamp(2.5rem, 4vw, 3.6rem); // 40px - 57.6px (reduced by 4px from original)
 }
 
 h3,
 .h3 {
-  font-size: clamp($font-size-2xl, 3vw, $font-size-4xl);
+  font-size: clamp(2rem, 3vw, 3rem); // 32px - 48px (reduced by 4px from original)
 }
 
 h4,

@@ -14,8 +14,8 @@
     <yield name="headline">Welcome to the Butterfly Pavilion</yield>
     <yield name="subheadline">Discover the magic of butterflies...</yield>
     <yield name="buttons">
-      <a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a>
-      <a href="/visit.html" class="btn btn--outline-white btn--lg">Plan Your Visit</a>
+      <include src="components/button/button.html"><yield name="text">Get Tickets</yield><yield name="url">/tickets.html</yield><yield name="class">btn--primary</yield></include>
+      <include src="components/button/button.html"><yield name="text">Plan Your Visit</yield><yield name="url">/visit.html</yield><yield name="class">btn--outline-white</yield></include>
     </yield>
   </include>
 -->
@@ -39,8 +39,16 @@
 
       <div class="hero__actions" data-animate="fade-up" data-animate-delay="200">
         <yield name="buttons">
-          <a href="/tickets.html" class="btn btn--primary btn--lg">Get Tickets</a>
-          <a href="/visit.html" class="btn btn--outline-white btn--lg">Plan Your Visit</a>
+          <include src="components/button/button.html">
+            <yield name="text">Get Tickets</yield>
+            <yield name="url">/tickets.html</yield>
+            <yield name="class">btn--primary</yield>
+          </include>
+          <include src="components/button/button.html">
+            <yield name="text">Plan Your Visit</yield>
+            <yield name="url">/visit.html</yield>
+            <yield name="class">btn--outline-white</yield>
+          </include>
         </yield>
       </div>
     </div>

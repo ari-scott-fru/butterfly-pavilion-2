@@ -1,0 +1,180 @@
+// ==========================================================================
+// Card Event Component
+// ==========================================================================
+@use '../../scss/variables' as *;
+
+.card-event {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-primary-extra-light;
+  border: 1px solid $color-primary-muted;
+  border-radius: $border-radius-2xl;
+  box-shadow: 0 0 0 1px #1a3c5112, 0 4px 2px #1a3c5105, 0 8px 4px #1a3c5105, 0 16px 8px #1a3c5105, 0 32px 16px #1a3c5105;
+  overflow: hidden;
+  transition: transform $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  // --------------------------------------------------------------------------
+  // Link wrapper
+  // --------------------------------------------------------------------------
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  // --------------------------------------------------------------------------
+  // Image
+  // --------------------------------------------------------------------------
+  &__image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-base;
+  }
+
+  &:hover &__image {
+    transform: scale(1.05);
+  }
+
+  // --------------------------------------------------------------------------
+  // Content
+  // --------------------------------------------------------------------------
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: $spacing-12 $spacing-10;
+  }
+
+  &__tag {
+    margin-bottom: $spacing-3;
+  }
+
+  &__title {
+    margin-bottom: $spacing-4;
+    color: $color-neutral-900;
+  }
+
+  // --------------------------------------------------------------------------
+  // Meta (time & date)
+  // --------------------------------------------------------------------------
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+    margin-top: auto;
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    color: $color-neutral-600;
+  }
+
+  &__meta-icon {
+    flex-shrink: 0;
+    color: $color-primary;
+  }
+
+  // --------------------------------------------------------------------------
+  // Action (button)
+  // --------------------------------------------------------------------------
+  &__action {
+    margin-top: $spacing-6;
+
+    .btn--white {
+      color: $color-primary;
+      box-shadow: 0 0 0 1px #1a3c5112, 0 4px 2px #1a3c5105, 0 8px 4px #1a3c5105, 0 16px 8px #1a3c5105, 0 32px 16px #1a3c5105;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Variants
+  // --------------------------------------------------------------------------
+
+  // Primary variant (Adult) - default
+  &--primary {
+    background-color: $color-primary-extra-light;
+    border-color: $color-primary-muted;
+
+    .card-event__tag .tag {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    .card-event__meta-icon {
+      color: $color-primary;
+    }
+
+    .card-event__action .btn--white {
+      color: $color-primary;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  // Secondary variant (Family)
+  &--secondary {
+    background-color: $color-secondary-extra-light;
+    border-color: $color-secondary-muted;
+
+    .card-event__tag .tag {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+
+    .card-event__meta-icon {
+      color: $color-secondary;
+    }
+
+    .card-event__action .btn--white {
+      color: $color-secondary;
+
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  // Tertiary variant (Kids)
+  &--tertiary {
+    background-color: $color-tertiary-extra-light;
+    border-color: $color-tertiary-muted;
+
+    .card-event__tag .tag {
+      background-color: $color-tertiary;
+      color: $color-white;
+    }
+
+    .card-event__meta-icon {
+      color: $color-tertiary;
+    }
+
+    .card-event__action .btn--white {
+      color: $color-tertiary;
+
+      &:hover {
+        color: $color-tertiary;
+      }
+    }
+  }
+}

@@ -38,22 +38,12 @@
           <li><a href="#buttons" class="ds-sidebar__link">Buttons</a></li>
           <li><a href="#card-images" class="ds-sidebar__link">Card Image</a></li>
           <li><a href="#card-images-bottom" class="ds-sidebar__link">Card Image Bottom</a></li>
-          <li><a href="#card-icons" class="ds-sidebar__link">Card Icons</a></li>
+          <li><a href="#card-icons" class="ds-sidebar__link">Card Icon</a></li>
+          <li><a href="#card-events" class="ds-sidebar__link">Card Event</a></li>
           <li><a href="#tags" class="ds-sidebar__link">Tags</a></li>
         </ul>
       </div>
 
-      <div class="ds-sidebar__section">
-        <h3 class="ds-sidebar__title">Blocks</h3>
-        <ul class="ds-sidebar__list">
-          <li><a href="#hero-landing" class="ds-sidebar__link">Hero Landing</a></li>
-          <li><a href="#image-text" class="ds-sidebar__link">Image + Text</a></li>
-          <li><a href="#stats" class="ds-sidebar__link">Stats</a></li>
-          <li><a href="#card-icons-block" class="ds-sidebar__link">Card Icons Block</a></li>
-          <li><a href="#card-images-block" class="ds-sidebar__link">Card Images Block</a></li>
-          <li><a href="#card-image-bottom-block" class="ds-sidebar__link">Card Image Bottom Block</a></li>
-        </ul>
-      </div>
     </nav>
   </aside>
 
@@ -310,6 +300,13 @@
         <div class="ds-type-scale__item"><h5 class="h5">Heading 5</h5><code>1.25rem (20px)</code></div>
         <div class="ds-type-scale__item"><h6 class="h6">Heading 6</h6><code>1.125rem (18px)</code></div>
       </div>
+
+      <h3 class="ds-subsection__title">Body Copy</h3>
+      <div class="ds-type-scale">
+        <div class="ds-type-scale__item"><p class="lead" style="margin-bottom: 0;">Lead paragraph text for introductions and highlights.</p><code>.lead - 1.375rem (22px)</code></div>
+        <div class="ds-type-scale__item"><p style="margin-bottom: 0;">Default body text used for paragraphs and general content throughout the site.</p><code>p - 1.1875rem (19px)</code></div>
+        <div class="ds-type-scale__item"><p class="small" style="margin-bottom: 0;">Small text for captions, labels, and secondary information.</p><code>.small - 0.875rem (14px)</code></div>
+      </div>
     </section>
 
     <!-- Spacing -->
@@ -317,13 +314,20 @@
       <h4 class="ds-section__title">Spacing</h4>
       <p class="ds-section__desc">Consistent spacing scale based on a 4px unit.</p>
       <div class="ds-spacing-grid">
-        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 4px; height: 4px;"></div><code>$spacing-1</code><span>4px</span></div>
-        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 8px; height: 8px;"></div><code>$spacing-2</code><span>8px</span></div>
-        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 16px; height: 16px;"></div><code>$spacing-4</code><span>16px</span></div>
-        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 24px; height: 24px;"></div><code>$spacing-6</code><span>24px</span></div>
-        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 32px; height: 32px;"></div><code>$spacing-8</code><span>32px</span></div>
-        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 48px; height: 48px;"></div><code>$spacing-12</code><span>48px</span></div>
-        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 64px; height: 64px;"></div><code>$spacing-16</code><span>64px</span></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 4px; height: 4px; border: 1px dashed currentColor; background: transparent;"></div><div class="ds-spacing-item__info"><code>$spacing-0</code><span>0</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 4px; height: 4px;"></div><div class="ds-spacing-item__info"><code>$spacing-1</code><span>4px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 8px; height: 8px;"></div><div class="ds-spacing-item__info"><code>$spacing-2</code><span>8px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 12px; height: 12px;"></div><div class="ds-spacing-item__info"><code>$spacing-3</code><span>12px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 16px; height: 16px;"></div><div class="ds-spacing-item__info"><code>$spacing-4</code><span>16px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 20px; height: 20px;"></div><div class="ds-spacing-item__info"><code>$spacing-5</code><span>20px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 24px; height: 24px;"></div><div class="ds-spacing-item__info"><code>$spacing-6</code><span>24px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 32px; height: 32px;"></div><div class="ds-spacing-item__info"><code>$spacing-8</code><span>32px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 40px; height: 40px;"></div><div class="ds-spacing-item__info"><code>$spacing-10</code><span>40px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 48px; height: 48px;"></div><div class="ds-spacing-item__info"><code>$spacing-12</code><span>48px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 64px; height: 64px;"></div><div class="ds-spacing-item__info"><code>$spacing-16</code><span>64px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 80px; height: 80px;"></div><div class="ds-spacing-item__info"><code>$spacing-20</code><span>80px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 96px; height: 96px;"></div><div class="ds-spacing-item__info"><code>$spacing-24</code><span>96px</span></div></div>
+        <div class="ds-spacing-item"><div class="ds-spacing-item__visual" style="width: 128px; height: 128px;"></div><div class="ds-spacing-item__info"><code>$spacing-32</code><span>128px</span></div></div>
       </div>
     </section>
 
@@ -344,12 +348,6 @@
         <a href="#" class="btn btn--outline-white">Outline White</a>
       </div>
 
-      <h3 class="ds-subsection__title">Sizes</h3>
-      <div class="ds-component-row">
-        <a href="#" class="btn btn--primary btn--sm">Small</a>
-        <a href="#" class="btn btn--primary">Default</a>
-        <a href="#" class="btn btn--primary btn--lg">Large</a>
-      </div>
     </section>
 
     <!-- Card Image Component -->
@@ -386,10 +384,9 @@
       <h3 class="ds-subsection__title">Default Card Image Bottom</h3>
       <div class="ds-component-row" style="max-width: 400px;">
         <include src="components/card-image-bottom/card-image-bottom.html">
-          <yield name="tag">Events</yield>
           <yield name="title">Live Chrysalis Camera</yield>
           <yield name="description">This is an example card description that explains the content.</yield>
-          <yield name="button"><a href="#" class="btn btn--primary btn--sm">Learn More</a></yield>
+          <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--outline</yield></include></yield>
           <yield name="image"><img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Example card image" class="card-image-bottom__image" loading="eager"></yield>
         </include>
       </div>
@@ -397,18 +394,17 @@
       <h3 class="ds-subsection__title">Usage</h3>
       <div class="ds-code-block">
         <pre><code>&lt;include src="components/card-image-bottom/card-image-bottom.html"&gt;
-  &lt;yield name="tag"&gt;Events&lt;/yield&gt;
   &lt;yield name="title"&gt;Card Title&lt;/yield&gt;
   &lt;yield name="description"&gt;Description text&lt;/yield&gt;
-  &lt;yield name="button"&gt;&lt;a href="#" class="btn btn--primary btn--sm"&gt;Learn More&lt;/a&gt;&lt;/yield&gt;
+  &lt;yield name="button"&gt;...&lt;/yield&gt;
   &lt;yield name="image"&gt;&lt;img src="image.jpg" class="card-image-bottom__image"&gt;&lt;/yield&gt;
 &lt;/include&gt;</code></pre>
       </div>
     </section>
 
-    <!-- Card Icons Component -->
+    <!-- Card Icon Component -->
     <section id="card-icons" class="ds-section">
-      <h4 class="ds-section__title">Card Icons</h4>
+      <h4 class="ds-section__title">Card Icon</h4>
       <p class="ds-section__desc">Icon-based cards for features, services, and benefits.</p>
 
       <h3 class="ds-subsection__title">Variants</h3>
@@ -417,19 +413,83 @@
           <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></yield>
           <yield name="title">Primary</yield>
           <yield name="description">Default card icon with primary gradient.</yield>
+          <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
         </include>
         <include src="components/card-icon/card-icon.html">
           <yield name="class">card-icon--secondary</yield>
           <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path></svg></yield>
           <yield name="title">Secondary</yield>
           <yield name="description">Secondary variant with orange gradient.</yield>
+          <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
         </include>
         <include src="components/card-icon/card-icon.html">
           <yield name="class">card-icon--tertiary</yield>
           <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></yield>
           <yield name="title">Tertiary</yield>
           <yield name="description">Tertiary variant with green gradient.</yield>
+          <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
         </include>
+      </div>
+    </section>
+
+    <!-- Card Event Component -->
+    <section id="card-events" class="ds-section">
+      <h4 class="ds-section__title">Card Event</h4>
+      <p class="ds-section__desc">Event cards with image, category tag, title, time, and date. Color variants for Adult (primary), Family (secondary), and Kids (tertiary) events.</p>
+
+      <h3 class="ds-subsection__title">Variants</h3>
+      <div class="ds-component-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px;">
+        <include src="components/card-event/card-event.html">
+          <yield name="class">card-event--primary</yield>
+          <yield name="image"><img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Photography workshop" class="card-event__image"></yield>
+          <yield name="category">Adult Program</yield>
+          <yield name="title">Photography Workshop</yield>
+          <yield name="time">6:00 PM - 8:00 PM</yield>
+          <yield name="date">Friday, March 21</yield>
+          <yield name="button"><include src="components/button/button.html"><yield name="text">Register</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
+        </include>
+        <include src="components/card-event/card-event.html">
+          <yield name="class">card-event--secondary</yield>
+          <yield name="image"><img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Family butterfly walk" class="card-event__image"></yield>
+          <yield name="category">Family Program</yield>
+          <yield name="title">Family Butterfly Walk</yield>
+          <yield name="time">10:00 AM - 12:00 PM</yield>
+          <yield name="date">Saturday, March 22</yield>
+          <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
+        </include>
+        <include src="components/card-event/card-event.html">
+          <yield name="class">card-event--tertiary</yield>
+          <yield name="image"><img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Bug camp for kids" class="card-event__image"></yield>
+          <yield name="category">Kids Program</yield>
+          <yield name="title">Bug Camp Adventure</yield>
+          <yield name="time">9:00 AM - 3:00 PM</yield>
+          <yield name="date">Monday - Friday</yield>
+          <yield name="button"><include src="components/button/button.html"><yield name="text">Enroll Now</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
+        </include>
+      </div>
+
+      <h3 class="ds-subsection__title">Usage</h3>
+      <div class="ds-code-block">
+        <pre><code>&lt;include src="components/card-event/card-event.html"&gt;
+  &lt;yield name="class"&gt;card-event--secondary&lt;/yield&gt;
+  &lt;yield name="image"&gt;&lt;img src="image.jpg" class="card-event__image"&gt;&lt;/yield&gt;
+  &lt;yield name="category"&gt;Family Program&lt;/yield&gt;
+  &lt;yield name="title"&gt;Event Title&lt;/yield&gt;
+  &lt;yield name="time"&gt;10:00 AM - 12:00 PM&lt;/yield&gt;
+  &lt;yield name="date"&gt;Saturday, March 15&lt;/yield&gt;
+  &lt;yield name="button"&gt;
+    &lt;include src="components/button/button.html"&gt;
+      &lt;yield name="text"&gt;Learn More&lt;/yield&gt;
+      &lt;yield name="url"&gt;#&lt;/yield&gt;
+      &lt;yield name="class"&gt;btn--white&lt;/yield&gt;
+    &lt;/include&gt;
+  &lt;/yield&gt;
+&lt;/include&gt;
+
+&lt;!-- Variants (use matching category): --&gt;
+&lt;!-- card-event--primary → "Adult Program" --&gt;
+&lt;!-- card-event--secondary → "Family Program" --&gt;
+&lt;!-- card-event--tertiary → "Kids Program" --&gt;</code></pre>
       </div>
     </section>
 
@@ -453,249 +513,6 @@
         <span class="tag tag--sm">Small</span>
         <span class="tag">Default</span>
         <span class="tag tag--lg">Large</span>
-      </div>
-    </section>
-
-    <!-- Hero Landing Block -->
-    <section id="hero-landing" class="ds-section">
-      <h4 class="ds-section__title">Hero Landing Block</h4>
-      <p class="ds-section__desc">Hero section with headline, body copy, dual CTAs, and optional image carousel.</p>
-
-      <h3 class="ds-subsection__title">Preview</h3>
-      <div class="ds-block-preview">
-        <include src="blocks/hero-landing/hero-landing.html">
-          <yield name="headline">Step into a living world brought to life by <span class="text-rotate" data-rotate-words="Butterflies,Beetles,Spiders">Butterflies</span></yield>
-          <yield name="body"><p class="lead">Experience the world's first accredited invertebrate zoo.</p></yield>
-          <yield name="primaryButton"><a href="#" class="btn btn--primary btn--lg">Get Tickets</a></yield>
-          <yield name="secondaryButton"><a href="#" class="btn btn--outline btn--lg">Plan Your Visit</a></yield>
-          <yield name="carouselColumn1">
-            <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-            <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-            <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-            <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-          </yield>
-          <yield name="carouselColumn2">
-            <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-            <img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-            <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-            <img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image">
-          </yield>
-        </include>
-      </div>
-
-      <h3 class="ds-subsection__title">Usage</h3>
-      <div class="ds-code-block">
-        <pre><code>&lt;include src="blocks/hero-landing/hero-landing.html"&gt;
-  &lt;yield name="headline"&gt;Your Headline&lt;/yield&gt;
-  &lt;yield name="body"&gt;&lt;p class="lead"&gt;Body copy...&lt;/p&gt;&lt;/yield&gt;
-  &lt;yield name="primaryButton"&gt;&lt;a href="#" class="btn btn--primary btn--lg"&gt;Primary&lt;/a&gt;&lt;/yield&gt;
-  &lt;yield name="secondaryButton"&gt;&lt;a href="#" class="btn btn--outline btn--lg"&gt;Secondary&lt;/a&gt;&lt;/yield&gt;
-  &lt;yield name="carouselColumn1"&gt;
-    &lt;img src="image1.jpg" class="hero-landing__carousel-image"&gt;
-  &lt;/yield&gt;
-  &lt;yield name="carouselColumn2"&gt;
-    &lt;img src="image2.jpg" class="hero-landing__carousel-image"&gt;
-  &lt;/yield&gt;
-&lt;/include&gt;</code></pre>
-      </div>
-    </section>
-
-    <!-- Image + Text Block -->
-    <section id="image-text" class="ds-section">
-      <h4 class="ds-section__title">Image + Text Block</h4>
-      <p class="ds-section__desc">Two-column layout with image and text content.</p>
-
-      <h3 class="ds-subsection__title">Default</h3>
-      <div class="ds-block-preview">
-        <include src="blocks/image-text/image-text.html">
-          <yield name="image"><img src="https://images.unsplash.com/photo-1559253664-ca249d4608c6?w=800&q=80" alt="Example" class="image-text__image"></yield>
-          <yield name="headline">Section Headline</yield>
-          <yield name="content"><p>This is example content for the image + text block.</p></yield>
-          <yield name="button"><a href="#" class="btn btn--primary">Call to Action</a></yield>
-        </include>
-      </div>
-
-      <h3 class="ds-subsection__title">Reversed</h3>
-      <div class="ds-block-preview">
-        <include src="blocks/image-text/image-text-reversed.html">
-          <yield name="image"><img src="https://images.unsplash.com/photo-1518173946687-a4c036bc2b0e?w=800&q=80" alt="Example" class="image-text__image"></yield>
-          <yield name="headline">Reversed Layout</yield>
-          <yield name="content"><p>Use the reversed variant to alternate the layout.</p></yield>
-          <yield name="button"><a href="#" class="btn btn--primary">Call to Action</a></yield>
-        </include>
-      </div>
-
-      <h3 class="ds-subsection__title">Usage</h3>
-      <div class="ds-code-block">
-        <pre><code>&lt;include src="blocks/image-text/image-text.html"&gt;
-  &lt;yield name="image"&gt;&lt;img src="image.jpg" class="image-text__image"&gt;&lt;/yield&gt;
-  &lt;yield name="headline"&gt;Section Headline&lt;/yield&gt;
-  &lt;yield name="content"&gt;&lt;p&gt;Your content here...&lt;/p&gt;&lt;/yield&gt;
-  &lt;yield name="button"&gt;&lt;a href="#" class="btn btn--primary"&gt;Learn More&lt;/a&gt;&lt;/yield&gt;
-&lt;/include&gt;
-
-&lt;!-- For reversed layout, use: --&gt;
-&lt;include src="blocks/image-text/image-text-reversed.html"&gt;...&lt;/include&gt;</code></pre>
-      </div>
-    </section>
-
-    <!-- Stats Block -->
-    <section id="stats" class="ds-section">
-      <h4 class="ds-section__title">Stats Block</h4>
-      <p class="ds-section__desc">Full-width statistics display with gradient background.</p>
-
-      <h3 class="ds-subsection__title">Preview</h3>
-      <div class="ds-block-preview">
-        <include src="blocks/stats/stats.html">
-          <yield name="items">
-            <div class="stats__item h3"><div class="stats__value">1.6K+</div><p class="stats__label">Live Butterflies</p></div>
-            <div class="stats__item h3"><div class="stats__value">200+</div><p class="stats__label">Species</p></div>
-            <div class="stats__item h3"><div class="stats__value">500K+</div><p class="stats__label">Annual Visitors</p></div>
-            <div class="stats__item h3"><div class="stats__value">30+</div><p class="stats__label">Years of Wonder</p></div>
-          </yield>
-        </include>
-      </div>
-
-      <h3 class="ds-subsection__title">Usage</h3>
-      <div class="ds-code-block">
-        <pre><code>&lt;include src="blocks/stats/stats.html"&gt;
-  &lt;yield name="items"&gt;
-    &lt;div class="stats__item"&gt;
-      &lt;div class="stats__value"&gt;1.6K+&lt;/div&gt;
-      &lt;p class="stats__label"&gt;Live Butterflies&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;!-- More items... --&gt;
-  &lt;/yield&gt;
-&lt;/include&gt;</code></pre>
-      </div>
-    </section>
-
-    <!-- Card Icons Block -->
-    <section id="card-icons-block" class="ds-section">
-      <h4 class="ds-section__title">Card Icons Block</h4>
-      <p class="ds-section__desc">A section with header, description, and a 2x1 grid of card icons (bottom card 2/3 width, right-aligned).</p>
-
-      <h3 class="ds-subsection__title">Preview</h3>
-      <div class="ds-block-preview">
-        <include src="blocks/card-icons/card-icons.html">
-          <yield name="headline"><h2 class="card-icons__headline">Why Visit Us</h2></yield>
-          <yield name="description"><p class="card-icons__description">Discover what makes the Butterfly Pavilion special.</p></yield>
-          <yield name="items">
-            <include src="components/card-icon/card-icon.html">
-              <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></yield>
-              <yield name="title">Educational Programs</yield>
-              <yield name="description">Learn about butterflies and conservation.</yield>
-            </include>
-            <include src="components/card-icon/card-icon.html">
-              <yield name="class">card-icon--secondary</yield>
-              <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path></svg></yield>
-              <yield name="title">Family Friendly</yield>
-              <yield name="description">Activities for visitors of all ages.</yield>
-            </include>
-            <include src="components/card-icon/card-icon.html">
-              <yield name="class">card-icon--tertiary</yield>
-              <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></yield>
-              <yield name="title">Conservation Focus</yield>
-              <yield name="description">Supporting butterfly conservation.</yield>
-            </include>
-          </yield>
-        </include>
-      </div>
-    </section>
-
-    <!-- Card Images Block -->
-    <section id="card-images-block" class="ds-section">
-      <h4 class="ds-section__title">Card Images Block</h4>
-      <p class="ds-section__desc">A section with header, description, and a 3-column grid of image cards.</p>
-
-      <h3 class="ds-subsection__title">Preview</h3>
-      <div class="ds-block-preview">
-        <include src="blocks/card-images/card-images.html">
-          <yield name="headline"><h2 class="card-images__headline">Featured Exhibits</h2></yield>
-          <yield name="description"><p class="card-images__description">Discover the diverse world of invertebrates.</p></yield>
-          <yield name="items">
-            <include src="components/card-image/card-image.html">
-              <yield name="image"><img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Tropical butterfly" class="card-image__image"></yield>
-              <yield name="title">Tropical Conservatory</yield>
-              <yield name="description">Walk among 1,600+ free-flying butterflies.</yield>
-              <yield name="link"><a href="#" class="card-image__link">Visit <span class="card-image__link-arrow">&rarr;</span></a></yield>
-            </include>
-            <include src="components/card-image/card-image.html">
-              <yield name="image"><img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Crawly Critters" class="card-image__image"></yield>
-              <yield name="title">Crawly Critters</yield>
-              <yield name="description">Get up close with tarantulas and scorpions.</yield>
-              <yield name="link"><a href="#" class="card-image__link">Meet <span class="card-image__link-arrow">&rarr;</span></a></yield>
-            </include>
-            <include src="components/card-image/card-image.html">
-              <yield name="image"><img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Touch Tanks" class="card-image__image"></yield>
-              <yield name="title">Tidal Touch Tanks</yield>
-              <yield name="description">Touch sea stars and hermit crabs.</yield>
-              <yield name="link"><a href="#" class="card-image__link">Explore <span class="card-image__link-arrow">&rarr;</span></a></yield>
-            </include>
-          </yield>
-        </include>
-      </div>
-    </section>
-
-    <!-- Card Image Bottom Block -->
-    <section id="card-image-bottom-block" class="ds-section">
-      <h4 class="ds-section__title">Card Image Bottom Block</h4>
-      <p class="ds-section__desc">A paginated carousel block featuring card image bottom components.</p>
-
-      <h3 class="ds-subsection__title">Preview</h3>
-      <div class="ds-block-preview">
-        <include src="blocks/card-image-bottom/card-image-bottom-block.html">
-          <yield name="headline">Upcoming Events</yield>
-          <yield name="body"><p class="card-image-bottom-block__body">Discover exciting programs and activities.</p></yield>
-          <yield name="cards">
-            <include src="components/card-image-bottom/card-image-bottom.html">
-              <yield name="tag">Events</yield>
-              <yield name="title">Live Chrysalis Camera</yield>
-              <yield name="description">Watch butterflies emerge in real-time.</yield>
-              <yield name="button"><a href="#" class="btn btn--primary btn--sm">Watch Now</a></yield>
-              <yield name="image"><img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Chrysalis" class="card-image-bottom__image"></yield>
-            </include>
-            <include src="components/card-image-bottom/card-image-bottom.html">
-              <yield name="tag">Education</yield>
-              <yield name="title">Butterfly Workshop</yield>
-              <yield name="description">Interactive workshop about life cycles.</yield>
-              <yield name="button"><a href="#" class="btn btn--primary btn--sm">Register</a></yield>
-              <yield name="image"><img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Workshop" class="card-image-bottom__image"></yield>
-            </include>
-            <include src="components/card-image-bottom/card-image-bottom.html">
-              <yield name="tag">News</yield>
-              <yield name="title">New Species Arrival</yield>
-              <yield name="description">Rare Morpho butterflies have arrived.</yield>
-              <yield name="button"><a href="#" class="btn btn--primary btn--sm">Read More</a></yield>
-              <yield name="image"><img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Morpho" class="card-image-bottom__image"></yield>
-            </include>
-            <include src="components/card-image-bottom/card-image-bottom.html">
-              <yield name="tag">Events</yield>
-              <yield name="title">Summer Camp</yield>
-              <yield name="description">Nature discovery for kids ages 6-12.</yield>
-              <yield name="button"><a href="#" class="btn btn--primary btn--sm">Enroll</a></yield>
-              <yield name="image"><img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Summer camp" class="card-image-bottom__image"></yield>
-            </include>
-          </yield>
-        </include>
-      </div>
-
-      <h3 class="ds-subsection__title">Usage</h3>
-      <div class="ds-code-block">
-        <pre><code>&lt;include src="blocks/card-image-bottom/card-image-bottom-block.html"&gt;
-  &lt;yield name="headline"&gt;Upcoming Events&lt;/yield&gt;
-  &lt;yield name="body"&gt;Description text.&lt;/yield&gt;
-  &lt;yield name="cards"&gt;
-    &lt;include src="components/card-image-bottom/card-image-bottom.html"&gt;
-      &lt;yield name="tag"&gt;Events&lt;/yield&gt;
-      &lt;yield name="title"&gt;Event Title&lt;/yield&gt;
-      &lt;yield name="description"&gt;Description&lt;/yield&gt;
-      &lt;yield name="button"&gt;&lt;a href="#" class="btn btn--primary btn--sm"&gt;Action&lt;/a&gt;&lt;/yield&gt;
-      &lt;yield name="image"&gt;&lt;img src="image.jpg" class="card-image-bottom__image"&gt;&lt;/yield&gt;
-    &lt;/include&gt;
-    &lt;!-- More cards... --&gt;
-  &lt;/yield&gt;
-&lt;/include&gt;</code></pre>
       </div>
     </section>
 

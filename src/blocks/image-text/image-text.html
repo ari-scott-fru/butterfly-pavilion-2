@@ -3,9 +3,11 @@
   WordPress: ACF Block - acf/image-text
 
   ACF Fields:
-  - it_image (image)
+  - it_image (image) - primary/larger image
+  - it_image_secondary (image) - optional overlay image, smaller and offset
   - it_headline (text)
   - it_content (wysiwyg)
+  - it_list (repeater with link items, displays as 2-column checkmark list)
   - it_button (link)
   - it_reversed (true_false)
 
@@ -27,9 +29,13 @@
   <div class="container">
     <div class="image-text__grid">
       <div class="image-text__media" data-animate="fade-right">
-        <yield name="image">
-          <img src="https://placehold.co/600x500" alt="Featured image" class="image-text__image" loading="lazy">
-        </yield>
+        <yield name="graphic"></yield>
+        <div class="image-text__image-primary">
+          <yield name="image">
+            <img src="https://placehold.co/600x500" alt="Featured image" class="image-text__image" loading="lazy">
+          </yield>
+        </div>
+        <yield name="image_secondary"></yield>
       </div>
 
       <div class="image-text__content" data-animate="fade-left">
@@ -42,6 +48,8 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </yield>
         </div>
+
+        <yield name="list"></yield>
 
         <yield name="button">
           <include src="components/button/button.html">

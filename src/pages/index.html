@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/scss/main.scss">
 </head>
 <body>
-  <include src="layouts/header.html"></include>
+<include src="layouts/header.html"></include>
 
   <main id="main-content">
 
@@ -49,7 +49,7 @@
 
     <!-- Stats Section -->
     <include src="blocks/stats/stats.html">
-      <yield name="class">bg-gradient-primary-tertiary</yield>
+      <yield name="class">bg-gradient-primary-secondary</yield>
       <yield name="items">
         <div class="stats__item" data-animate="fade-up">
           <div class="stats__value h2">1.6K+</div>
@@ -72,28 +72,28 @@
 
     <!-- Why Visit Us -->
     <include src="blocks/card-icons/card-icons.html">
-      <yield name="class">section bg-light</yield>
+      <yield name="class">section</yield>
       <yield name="images">
         <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Butterfly conservatory" class="card-icons__img" loading="lazy">
         <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Crawly critters exhibit" class="card-icons__img" loading="lazy">
       </yield>
       <yield name="items">
         <include src="components/card-icon/card-icon.html">
-          <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></yield>
+          <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg></yield>
           <yield name="title">Visit Butterfly Pavilion</yield>
           <yield name="description">Butterfly Pavilion is open seven days a week from 9:00 a.m. – 5:00 p.m. with timed entry.</yield>
           <yield name="button"><include src="components/button/button.html"><yield name="text">Plan Your Visit</yield><yield name="url">/visit.html</yield><yield name="class">btn--white</yield></include></yield>
         </include>
         <include src="components/card-icon/card-icon.html">
           <yield name="class">card-icon--secondary</yield>
-          <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></yield>
+          <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></yield>
           <yield name="title">Getting Here</yield>
           <yield name="description">15 minutes from downtown Denver off Hwy 36 at 104th Ave — 6252 W. 104th Ave, Westminster.</yield>
           <yield name="button"><include src="components/button/button.html"><yield name="text">View Map</yield><yield name="url">/families.html</yield><yield name="class">btn--white</yield></include></yield>
         </include>
         <include src="components/card-icon/card-icon.html">
           <yield name="class">card-icon--tertiary</yield>
-          <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></yield>
+          <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></yield>
           <yield name="title">Schools and Youth Groups</yield>
           <yield name="description">  Butterfly Pavilion offers engaging, fun learning experiences that spark the inner scientist in every student.</yield>
           <yield name="button"><include src="components/button/button.html"><yield name="text">View Map</yield><yield name="url">/conservation.html</yield><yield name="class">btn--white</yield></include></yield>
@@ -102,8 +102,8 @@
     </include>
 
       <!-- Exhibits -->
-    <include src="blocks/card-image-bottom/card-image-bottom-block.html">
-      <yield name="class">section bg-light</yield>
+    <include src="blocks/card-carousel/card-carousel.html">
+      <yield name="class">section</yield>
       <yield name="headline">Explore Our Exhibits</yield>
       <yield name="cards">
         <include src="components/card-image-bottom/card-image-bottom.html">
@@ -160,102 +160,97 @@
      <!-- About Section -->
     <include src="blocks/image-text/image-text.html">
       <yield name="class">section image-text--reversed bg-light</yield>
+      <yield name="graphic"><img src="/assets/images/client-images/spider-graphic.png" alt="" class="image-text__graphic" aria-hidden="true" data-animate="fade-left" data-animate-delay="400"></yield>
       <yield name="image"><img src="https://images.unsplash.com/photo-1559253664-ca249d4608c6?w=800&q=80" alt="Colorful butterfly on a flower" class="image-text__image" loading="lazy"></yield>
-      <yield name="headline">More Than Just Butterflies</yield>
+      <yield name="image_secondary"><div class="image-text__image-secondary"><img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Conservation research in action" loading="lazy"></div></yield>
+      <yield name="headline">Conversation and Scientific Impact</yield>
       <yield name="content">
-        <p>At the Denver Butterfly Pavilion, we're dedicated to inspiring conservation and connecting people with the incredible world of invertebrates. Our 7,200-square-foot tropical conservatory houses over 1,600 butterflies from around the world.</p>
-        <p>Beyond butterflies, explore our interactive exhibits featuring fascinating creatures like tarantulas, sea stars, and our beloved Rosie the Chilean rose-hair tarantula.</p>
+        <p>Butterfly Pavilion advances science and conservation to protect the invertebrates that keep ecosystems thriving. Through cutting-edge research, education, and partnerships, we lead local and global initiatives that safeguard pollinators and other essential species. Our work strengthens biodiversity, supports communities, and helps build a more sustainable future.</p>
       </yield>
-      <yield name="button"><include src="components/button/button.html"><yield name="text">Explore Our Exhibits</yield><yield name="url">/exhibits.html</yield><yield name="class">btn--lg btn--primary</yield></include></yield>
+      <yield name="list">
+        <ul class="image-text__list">
+          <li class="image-text__list-item">
+            <a href="/conservation/colorado.html" class="image-text__list-link">
+              <span class="image-text__list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span class="image-text__list-text">Colorado Projects</span>
+              <span class="image-text__list-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </a>
+          </li>
+          <li class="image-text__list-item">
+            <a href="/conservation/global.html" class="image-text__list-link">
+              <span class="image-text__list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span class="image-text__list-text">Global Conservation Projects</span>
+              <span class="image-text__list-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </a>
+          </li>
+          <li class="image-text__list-item">
+            <a href="/conservation/zoo.html" class="image-text__list-link">
+              <span class="image-text__list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span class="image-text__list-text">Zoo Conservation</span>
+              <span class="image-text__list-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </a>
+          </li>
+          <li class="image-text__list-item">
+            <a href="/conservation/pollinators.html" class="image-text__list-link">
+              <span class="image-text__list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span class="image-text__list-text">Pollinator Awareness</span>
+              <span class="image-text__list-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </a>
+          </li>
+          <li class="image-text__list-item">
+            <a href="/conservation/global-projects.html" class="image-text__list-link">
+              <span class="image-text__list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span class="image-text__list-text">Global Projects</span>
+              <span class="image-text__list-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </a>
+          </li>
+          <li class="image-text__list-item">
+            <a href="/conservation/experts.html" class="image-text__list-link">
+              <span class="image-text__list-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span class="image-text__list-text">Invertebrate Experts</span>
+              <span class="image-text__list-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+            </a>
+          </li>
+        </ul>
+      </yield>
+      <yield name="button"><include src="components/button/button.html"><yield name="text">Donate Now</yield><yield name="url">/exhibits.html</yield><yield name="class">btn--lg btn--primary</yield></include></yield>
     </include>
 
     <!-- Testimonials -->
     <include src="blocks/testimonials/testimonials.html">
-      <yield name="class">section bg-gradient-primary-tertiary</yield>
+      <yield name="class">section bg-gradient-primary-tertiary has-bg-image</yield>
+      <yield name="style">background-image: url('/assets/images/client-images/butterfly-full-width-background.webp')</yield>
       <yield name="headline">Become a Member</yield>
       <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">/reviews.html</yield><yield name="class">btn--outline-white</yield></include></yield>
       <yield name="images">
-        <div class="testimonials__marquee-row">
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Visitor enjoying butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Family at pavilion" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Butterfly close-up" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Children with butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Tropical garden" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Visitor photo" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Butterfly landing" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/IMG_6074 (1) 1.jpg" alt="Group visit" loading="lazy">
-          </div>
-        </div>
-        <div class="testimonials__marquee-row">
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Visitor enjoying butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Family at pavilion" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Butterfly close-up" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Children with butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Tropical garden" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Visitor photo" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Butterfly landing" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/IMG_6074 (1) 1.jpg" alt="Group visit" loading="lazy">
-          </div>
-        </div>
+        <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Visitor enjoying butterflies" loading="lazy">
+        <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Family at pavilion" loading="lazy">
+        <img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Butterfly close-up" loading="lazy">
+        <img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Children with butterflies" loading="lazy">
+        <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Tropical garden" loading="lazy">
+        <img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Visitor photo" loading="lazy">
+        <img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Butterfly landing" loading="lazy">
+        <img src="/assets/images/client-images/IMG_6074 (1) 1.jpg" alt="Group visit" loading="lazy">
       </yield>
       <yield name="testimonials">
-        <div class="testimonials__card" data-testimonial="0">
-          <blockquote class="testimonials__quote">
-            <p>"An absolutely magical experience! My kids were in awe watching butterflies land on their hands. The staff was incredibly knowledgeable and made the visit educational and fun."</p>
-          </blockquote>
-          <div class="testimonials__author">
-            <span class="testimonials__author-name">Sarah M.</span>
-            <span class="testimonials__author-role">Denver, CO</span>
-          </div>
-        </div>
-        <div class="testimonials__card" data-testimonial="1">
-          <blockquote class="testimonials__quote">
-            <p>"We've visited butterfly exhibits around the world, and this one is truly special. The variety of species and the beautiful habitat they've created is remarkable. A must-visit in Denver!"</p>
-          </blockquote>
-          <div class="testimonials__author">
-            <span class="testimonials__author-name">Michael T.</span>
-            <span class="testimonials__author-role">Boulder, CO</span>
-          </div>
-        </div>
-        <div class="testimonials__card" data-testimonial="2">
-          <blockquote class="testimonials__quote">
-            <p>"Perfect for a date or family outing. The tropical environment is a wonderful escape, especially during Colorado winters. We loved every minute of our visit!"</p>
-          </blockquote>
-          <div class="testimonials__author">
-            <span class="testimonials__author-name">Jennifer & David K.</span>
-            <span class="testimonials__author-role">Aurora, CO</span>
-          </div>
-        </div>
+        <include src="components/testimonial/testimonial.html">
+          <yield name="index">0</yield>
+          <yield name="quote">An absolutely magical experience! My kids were in awe watching butterflies land on their hands. The staff was incredibly knowledgeable and made the visit educational and fun.</yield>
+          <yield name="author_name">Sarah M.</yield>
+          <yield name="author_location">Denver, CO</yield>
+        </include>
+        <include src="components/testimonial/testimonial.html">
+          <yield name="index">1</yield>
+          <yield name="quote">We've visited butterfly exhibits around the world, and this one is truly special. The variety of species and the beautiful habitat they've created is remarkable. A must-visit in Denver!</yield>
+          <yield name="author_name">Michael T.</yield>
+          <yield name="author_location">Boulder, CO</yield>
+        </include>
+        <include src="components/testimonial/testimonial.html">
+          <yield name="index">2</yield>
+          <yield name="quote">Perfect for a date or family outing. The tropical environment is a wonderful escape, especially during Colorado winters. We loved every minute of our visit!</yield>
+          <yield name="author_name">Jennifer & David K.</yield>
+          <yield name="author_location">Aurora, CO</yield>
+        </include>
       </yield>
     </include>
 

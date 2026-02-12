@@ -17,41 +17,29 @@
   foreach ($testimonials as $index => $testimonial) :
   ?>
     <div class="testimonials__card" data-testimonial="<?php echo $index; ?>">
-      <blockquote class="testimonials__quote">
-        <p>"<?php echo get_field('testimonial_quote', $testimonial->ID); ?>"</p>
-      </blockquote>
-      <div class="testimonials__author">
-        <span class="testimonials__author-name"><?php echo get_field('testimonial_author_name', $testimonial->ID); ?></span>
-        <span class="testimonials__author-role"><?php echo get_field('testimonial_author_location', $testimonial->ID); ?></span>
+      <div class="testimonials__card-content">
+        <blockquote class="testimonials__quote">
+          <h5>"<?php echo get_field('testimonial_quote', $testimonial->ID); ?>"</h5>
+        </blockquote>
+        <div class="testimonials__author">
+          <span class="testimonials__author-name"><?php echo get_field('testimonial_author_name', $testimonial->ID); ?></span>
+          <span class="testimonials__author-role"><?php echo get_field('testimonial_author_location', $testimonial->ID); ?></span>
+        </div>
       </div>
     </div>
   <?php endforeach; ?>
 
   Usage:
-  <include src="blocks/testimonials/testimonials.html">
-    <yield name="class">section</yield>
-    <yield name="headline">What Our Visitors Say</yield>
-    <yield name="button"><include src="components/button/button.html"><yield name="text">Read All Reviews</yield><yield name="url">#</yield><yield name="class">btn--outline</yield></include></yield>
-    <yield name="images">...</yield>
-    <yield name="testimonials">
-      <div class="testimonials__card" data-testimonial="0">
-        <blockquote class="testimonials__quote">
-          <p>"<yield name="quote">Quote text here</yield>"</p>
-        </blockquote>
-        <div class="testimonials__author">
-          <span class="testimonials__author-name"><yield name="author_name">Author Name</yield></span>
-          <span class="testimonials__author-role"><yield name="author_location">Location</yield></span>
-        </div>
-      </div>
-    </yield>
-  </include>
+  - Include testimonial components via testimonials yield
+  - Pass raw img tags via images yield - JavaScript will wrap and duplicate them
+  - Use testimonial component for each testimonial card
 
   Class variants:
   - section: Adds section padding
   - bg-light: Light background
   - bg-gradient-primary-tertiary: Gradient background
 -->
-<section class="testimonials <yield name="class"></yield>">
+<section class="testimonials <yield name="class"></yield>" style="<yield name="style"></yield>">
   <!-- Optional Header -->
   <yield name="header">
     <div class="testimonials__header container">
@@ -73,63 +61,11 @@
   </yield>
 
   <!-- Image Marquee -->
-  <div class="testimonials__marquee" data-animate-marquee-stagger>
+  <div class="testimonials__marquee" data-animate-marquee-stagger data-testimonials-marquee>
     <div class="testimonials__marquee-track">
+      <!-- Images will be wrapped and duplicated by JavaScript -->
       <yield name="images">
-        <!-- Row 1 - varied sizes -->
-        <div class="testimonials__marquee-row">
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/testimonial-1.jpg" alt="Visitor enjoying butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/testimonial-2.jpg" alt="Family at pavilion" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/testimonial-3.jpg" alt="Butterfly close-up" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/testimonial-4.jpg" alt="Children with butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/testimonial-5.jpg" alt="Tropical garden" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/testimonial-6.jpg" alt="Visitor photo" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/testimonial-7.jpg" alt="Butterfly landing" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/testimonial-8.jpg" alt="Group visit" loading="lazy">
-          </div>
-        </div>
-        <!-- Duplicate for seamless loop -->
-        <div class="testimonials__marquee-row">
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/testimonial-1.jpg" alt="Visitor enjoying butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/testimonial-2.jpg" alt="Family at pavilion" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/testimonial-3.jpg" alt="Butterfly close-up" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/testimonial-4.jpg" alt="Children with butterflies" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/testimonial-5.jpg" alt="Tropical garden" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item">
-            <img src="/assets/images/client-images/testimonial-6.jpg" alt="Visitor photo" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--tall">
-            <img src="/assets/images/client-images/testimonial-7.jpg" alt="Butterfly landing" loading="lazy">
-          </div>
-          <div class="testimonials__marquee-item testimonials__marquee-item--wide">
-            <img src="/assets/images/client-images/testimonial-8.jpg" alt="Group visit" loading="lazy">
-          </div>
-        </div>
+        <!-- Simple img tags passed in from page -->
       </yield>
     </div>
   </div>
@@ -138,56 +74,30 @@
   <div class="container">
     <div class="testimonials__cards-wrapper">
       <div class="testimonials__cards">
-      <div class="testimonials__card-wrapper">
-        <!-- WordPress: Loop through 'testimonial' CPT -->
-        <yield name="testimonials">
-          <div class="testimonials__card" data-testimonial="0">
-            <blockquote class="testimonials__quote">
-              <p>"<yield name="quote_1">An absolutely magical experience! My kids were in awe watching butterflies land on their hands. The staff was incredibly knowledgeable and made the visit educational and fun.</yield>"</p>
-            </blockquote>
-            <div class="testimonials__author">
-              <span class="testimonials__author-name"><yield name="author_name_1">Sarah M.</yield></span>
-              <span class="testimonials__author-role"><yield name="author_location_1">Denver, CO</yield></span>
-            </div>
-          </div>
-          <div class="testimonials__card" data-testimonial="1">
-            <blockquote class="testimonials__quote">
-              <p>"<yield name="quote_2">We've visited butterfly exhibits around the world, and this one is truly special. The variety of species and the beautiful habitat they've created is remarkable. A must-visit in Denver!</yield>"</p>
-            </blockquote>
-            <div class="testimonials__author">
-              <span class="testimonials__author-name"><yield name="author_name_2">Michael T.</yield></span>
-              <span class="testimonials__author-role"><yield name="author_location_2">Boulder, CO</yield></span>
-            </div>
-          </div>
-          <div class="testimonials__card" data-testimonial="2">
-            <blockquote class="testimonials__quote">
-              <p>"<yield name="quote_3">Perfect for a date or family outing. The tropical environment is a wonderful escape, especially during Colorado winters. We loved every minute of our visit!</yield>"</p>
-            </blockquote>
-            <div class="testimonials__author">
-              <span class="testimonials__author-name"><yield name="author_name_3">Jennifer & David K.</yield></span>
-              <span class="testimonials__author-role"><yield name="author_location_3">Aurora, CO</yield></span>
-            </div>
-          </div>
-        </yield>
-      </div>
-
-      <!-- Pagination -->
-      <div class="testimonials__pagination">
-        <button class="testimonials__nav testimonials__nav--prev" aria-label="Previous testimonial">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <div class="testimonials__dots">
-          <!-- Dots generated by JS -->
+        <div class="testimonials__card-wrapper">
+          <!-- WordPress: Loop through 'testimonial' CPT and use testimonial component -->
+          <yield name="testimonials">
+            <!-- Testimonial components go here -->
+          </yield>
         </div>
-        <button class="testimonials__nav testimonials__nav--next" aria-label="Next testimonial">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+
+        <!-- Pagination -->
+        <div class="testimonials__pagination">
+          <button class="testimonials__nav testimonials__nav--prev" aria-label="Previous testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="testimonials__dots">
+            <!-- Dots generated by JS -->
+          </div>
+          <button class="testimonials__nav testimonials__nav--next" aria-label="Next testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </section>

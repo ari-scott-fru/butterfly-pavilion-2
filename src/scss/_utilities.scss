@@ -16,18 +16,18 @@
 }
 
 .section {
-  padding-top: $section-padding-y;
-  padding-bottom: $section-padding-y;
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
 
   @media (min-width: $breakpoint-lg) {
-    padding-top: $section-padding-y-lg;
-    padding-bottom: $section-padding-y-lg;
+    padding-top: $section-padding-lg;
+    padding-bottom: $section-padding-lg;
   }
 
   // Reduce spacing between adjacent sections with same background
   // Default (white) background sections
   &:not([class*="bg-"]) + &:not([class*="bg-"]) {
-    padding-top: 3rem;
+    padding-top: $section-padding-sm;
   }
 
   // Same background color sections
@@ -36,7 +36,7 @@
   &.bg-primary + &.bg-primary,
   &.bg-secondary + &.bg-secondary,
   &.bg-white + &.bg-white {
-    padding-top: 4rem;
+    padding-top: $section-padding-sm;
   }
 }
 
@@ -206,7 +206,7 @@
 }
 
 .bg-light {
-  background-color: $color-neutral-100;
+  background-color: $color-primary-extra-light;
 }
 
 .bg-dark {
@@ -224,11 +224,73 @@
 .bg-gradient-primary-secondary {
   background: linear-gradient(45deg, $color-primary 0%, $color-secondary 100%);
   color: $color-text-inverse;
+
+  // Global: headlines and body copy white on gradient backgrounds
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $color-white;
+  }
+
+  p {
+    color: rgba($color-white, 0.9);
+  }
+
+  // When has background image, gradient becomes overlay
+  &.has-bg-image {
+    position: relative;
+    background: none; // Remove gradient from element - comes from ::before instead
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba($color-primary, 0.9) 0%, rgba($color-secondary, 0.9) 100%);
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
 }
 
 .bg-gradient-primary-tertiary {
   background: linear-gradient(45deg, $color-primary 0%, $color-tertiary 100%);
   color: $color-text-inverse;
+
+  // Global: headlines and body copy white on gradient backgrounds
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $color-white;
+  }
+
+  p {
+    color: rgba($color-white, 0.9);
+  }
+
+  // When has background image, gradient becomes overlay
+  &.has-bg-image {
+    position: relative;
+    background: none; // Remove gradient from element - comes from ::before instead
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba($color-primary, 0.9) 0%, rgba($color-tertiary, 0.9) 100%);
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
 }
 
 // --------------------------------------------------------------------------
@@ -246,24 +308,7 @@
   color: $color-white;
 }
 
-// --------------------------------------------------------------------------
-// Section Padding
-// --------------------------------------------------------------------------
-.section-pt {
-  padding-top: 7rem;
-}
 
-.section-pb {
-  padding-bottom: 7rem;
-}
-
-.section-pt-0 {
-  padding-top: 0;
-}
-
-.section-pb-0 {
-  padding-bottom: 0;
-}
 
 // --------------------------------------------------------------------------
 // Spacing

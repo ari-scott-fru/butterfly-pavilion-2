@@ -8,14 +8,7 @@
   - card_image_description (textarea)
   - card_image_link (link) - optional
 
-  Usage:
-  <include src="components/card-image/card-image.html">
-    <yield name="class"></yield>
-    <yield name="image"><img src="https://placehold.co/400x300" alt="Card image" class="card-image__image" loading="lazy"></yield>
-    <yield name="title">Card Title</yield>
-    <yield name="description">Card description text goes here.</yield>
-    <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="url">/path</yield><yield name="text">Learn More</yield></include></yield>
-  </include>
+  Usage: Pass class, image, title, description, and link yields
 -->
 <article class="card-image <yield name="class"></yield>">
   <div class="card-image__image-wrapper">

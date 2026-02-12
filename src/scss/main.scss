@@ -24,6 +24,7 @@
 @use '../components/card-icon/card-icon';
 @use '../components/card-event/card-event';
 @use '../components/tag/tag';
+@use '../components/testimonial/testimonial';
 
 // --------------------------------------------------------------------------
 // 4. Blocks
@@ -35,7 +36,7 @@
 @use '../blocks/stats/stats';
 @use '../blocks/card-icons/card-icons';
 @use '../blocks/card-images/card-images';
-@use '../blocks/card-image-bottom/card-image-bottom-block';
+@use '../blocks/card-carousel/card-carousel';
 @use '../blocks/testimonials/testimonials';
 @use '../blocks/card-events/card-events';
 

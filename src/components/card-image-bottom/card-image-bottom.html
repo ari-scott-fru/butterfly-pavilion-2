@@ -9,14 +9,7 @@
   - card_image_button_text (text)
   - card_image_button_url (url)
 
-  Usage:
-  <include src="components/card-image-bottom/card-image-bottom.html">
-    <yield name="class"></yield>
-    <yield name="image"><img src="https://placehold.co/400x300" alt="Card image" class="card-image-bottom__image" loading="lazy"></yield>
-    <yield name="title">Card Title</yield>
-    <yield name="description">Card description text goes here.</yield>
-    <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--outline</yield></include></yield>
-  </include>
+  Usage: Pass class, image, title, description, and button yields
 -->
 <article class="card-image-bottom <yield name="class"></yield>">
   <div class="card-image-bottom__content">

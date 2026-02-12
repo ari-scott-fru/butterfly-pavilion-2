@@ -10,14 +10,13 @@
 
   &__butterfly {
     position: absolute;
-    top: 0;
     z-index: 0;
     pointer-events: none;
     // opacity: 0.7;
-    // left:-12%;
-    top:-7%;
+    left:-2%;
+    top:-9%;
     width:240px;
-    transform: rotate(45deg);
+    transform: rotate(135deg);
 
 
     @media (min-width: 1990px) {
@@ -80,7 +79,7 @@
   &__carousel {
     display: none;
     position: relative;
-    height: 900px;
+    height: 800px;
     gap: $spacing-4;
     overflow: hidden;
     mask-image: linear-gradient(

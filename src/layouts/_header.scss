@@ -7,8 +7,8 @@
   position: sticky;
   top: 0;
   z-index: $z-index-sticky;
-  background-color: $color-white;
-  border-bottom: 1px solid $color-neutral-200;
+  background-color: $color-neutral-100;
+  border-bottom: 1px solid $color-primary-extra-light;
 
   &__inner {
     display: flex;
@@ -25,11 +25,13 @@
     flex-shrink: 0;
   }
 
-  &__logo-text {
-    font-family: $font-family-heading;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $color-primary;
+  &__logo-img {
+    height: 40px;
+    width: auto;
+
+    @media (min-width: $breakpoint-md) {
+      height: 56px;
+    }
   }
 
   &__nav {
@@ -61,12 +63,18 @@
     }
   }
 
-  &__cta {
+  &__actions {
     display: none;
+    gap: $spacing-3;
 
     @media (min-width: $breakpoint-lg) {
-      display: inline-flex;
+      display: flex;
+      align-items: center;
     }
+  }
+
+  &__cta {
+    flex-shrink: 0;
   }
 
   &__toggle {

@@ -1,0 +1,22 @@
+<!--
+  Testimonial Component
+  WordPress: Reusable component for testimonial cards
+
+  ACF Fields (if used in repeater):
+  - testimonial_quote (textarea)
+  - testimonial_author_name (text)
+  - testimonial_author_location (text)
+
+  Usage: Pass index, quote, author_name, and author_location yields
+-->
+<div class="testimonials__card" data-testimonial="<yield name="index">0</yield>">
+  <div class="testimonials__card-content">
+    <blockquote class="testimonials__quote">
+      <h5>"<yield name="quote">Quote text here</yield>"</h5>
+    </blockquote>
+    <div class="testimonials__author">
+      <span class="testimonials__author-name"><yield name="author_name">Author Name</yield></span>
+      <span class="testimonials__author-role"><yield name="author_location">Location</yield></span>
+    </div>
+  </div>
+</div>

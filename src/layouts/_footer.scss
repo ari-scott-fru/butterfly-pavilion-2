@@ -5,7 +5,7 @@
 
 .site-footer {
   background-color: $color-neutral-900;
-  color: $color-neutral-300;
+  color: $color-white;
   padding: $spacing-16 0 $spacing-8;
 
   &__grid {
@@ -30,22 +30,30 @@
     margin-bottom: $spacing-4;
   }
 
-  &__logo-text {
-    font-family: $font-family-heading;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: $color-white;
+  &__logo-img {
+    height: 48px;
+    width: auto;
+
+    @media (min-width: $breakpoint-md) {
+      height: 80px;
+    }
   }
 
   &__tagline {
     font-size: $font-size-base;
     line-height: $line-height-relaxed;
     margin-bottom: $spacing-6;
+    color:$color-white;
+  }
+
+  &__cta {
+    margin-bottom: $spacing-6;
   }
 
   &__social {
     display: flex;
-    gap: $spacing-4;
+    flex-wrap: wrap;
+    gap: $spacing-3;
   }
 
   &__social-link {
@@ -54,22 +62,28 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: $color-neutral-800;
+    background-color: $color-primary-extra-light;
+    border: 1px solid $color-primary-muted;
     border-radius: $border-radius-full;
-    color: $color-white;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-semibold;
+    color: $color-primary;
     text-decoration: none;
-    transition: background-color $transition-fast;
+    transition: all $transition-fast;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
 
     &:hover {
       background-color: $color-primary;
+      border-color: $color-primary;
+      color: $color-white;
     }
   }
 
   &__nav-title {
-    font-family: $font-family-base;
-    font-size: $font-size-sm;
+    // font-family: $font-family-base;
+    font-size: $font-size-lg;
     font-weight: $font-weight-semibold;
     color: $color-white;
     text-transform: uppercase;
@@ -87,7 +101,7 @@
     }
 
     a {
-      color: $color-neutral-400;
+      color: $color-neutral-300;
       text-decoration: none;
       font-size: $font-size-base;
       transition: color $transition-fast;

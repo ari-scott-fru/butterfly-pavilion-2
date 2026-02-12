@@ -6,11 +6,7 @@
   - link_text (text)
   - link_url (url)
 
-  Usage:
-  <include src="components/link-arrow/link-arrow.html">
-    <yield name="url">/path/to/page.html</yield>
-    <yield name="text">Learn More</yield>
-  </include>
+  Usage: Pass url and text yields
 -->
 <a href="<yield name="url">#</yield>" class="link-arrow <yield name="class"></yield>">
   <yield name="text">Learn More</yield>

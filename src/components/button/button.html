@@ -9,12 +9,7 @@
   - button_size (select: sm, md, lg)
   - button_new_tab (true_false)
 
-  Usage:
-  <include src="components/button/button.html">
-    <yield name="text">Button Text</yield>
-    <yield name="url">#</yield>
-    <yield name="class">btn--primary</yield>
-  </include>
+  Usage: Pass text, url, and class yields
 -->
 <a href="<yield name="url">#</yield>" class="btn <yield name="class">btn--primary</yield>">
   <yield name="text">Button</yield>

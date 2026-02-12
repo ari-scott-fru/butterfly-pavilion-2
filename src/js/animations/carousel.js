@@ -1,5 +1,5 @@
 // ==========================================================================
-// Card Image Bottom Block Carousel - Infinite Loop
+// Card Carousel Block - Infinite Loop
 // ==========================================================================
 import gsap from 'gsap';
 
@@ -61,7 +61,7 @@ export function initCarousels() {
       pagination.innerHTML = '';
       for (let i = 0; i < totalCards; i++) {
         const dot = document.createElement('button');
-        dot.className = 'card-image-bottom-block__dot';
+        dot.className = 'card-carousel__dot';
         dot.setAttribute('aria-label', `Go to card ${i + 1}`);
         if (i === 0) dot.classList.add('is-active');
         dot.addEventListener('click', () => goToCard(i + clonesPerSide));
@@ -78,7 +78,7 @@ export function initCarousels() {
       if (actualIndex < 0) actualIndex = totalCards + actualIndex;
       if (actualIndex >= totalCards) actualIndex = actualIndex - totalCards;
 
-      const dots = pagination.querySelectorAll('.card-image-bottom-block__dot');
+      const dots = pagination.querySelectorAll('.card-carousel__dot');
       dots.forEach((dot, index) => {
         dot.classList.toggle('is-active', index === actualIndex);
       });

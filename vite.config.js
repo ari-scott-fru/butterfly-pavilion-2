@@ -69,6 +69,7 @@ function posthtmlPlugin() {
 
 export default defineConfig({
   root: 'src',
+  base: '/butterfly-pavilion-2/',
   publicDir: resolve(__dirname, 'public'),
 
   plugins: [

@@ -1,40 +1,19 @@
 // ==========================================================================
-// Card Carousel Block
+// Card Carousel Block (Marquee)
 // ==========================================================================
 @use '../../scss/variables' as *;
 
 .card-carousel {
   position: relative;
-  overflow-x: clip;
-  overflow-y: visible;
-
-  // Override container to allow full-width carousel
-  > .container {
-    max-width: none;
-    padding: 0;
-  }
+  overflow: hidden;
 
   &__header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: $spacing-8;
-    margin-bottom: $spacing-12;
-    padding-left: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
-    padding-right: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
-  }
-
-  &__header-left {
-    flex: 1;
-
-    // Hide when empty (both headline and body omitted)
-    &:not(:has(*)) {
-      display: none;
-    }
+    margin-bottom: $spacing-8;
   }
 
   &__headline {
     margin-bottom: $spacing-3;
+    text-align: center;;
   }
 
   &__body {
@@ -45,109 +24,53 @@
     margin: 0;
   }
 
-  &__header-right {
-    display: flex;
-    align-items: flex-end;
-    flex-shrink: 0;
-  }
-
-  &__carousel {
-    position: relative;
+  &__marquee {
     overflow: hidden;
-    // Left-align with container
-    margin-left: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
-    padding-right: $spacing-6;
-    // Extend the overflow area to the right edge of viewport
-    margin-right: calc(-1 * max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6)));
-    padding-right: max($spacing-6, calc((100vw - #{$container-max-width}) / 2 + $spacing-6));
-    // Padding for card shadows
-    padding-top: $spacing-4;
-    padding-bottom: $spacing-10;
-    margin-top: -$spacing-4;
-    margin-bottom: -$spacing-10;
+    padding: $spacing-4 0;
   }
 
   &__track {
     display: flex;
-    gap: $spacing-6;
-    transition: transform $transition-slow;
+    gap: $spacing-4;
+    width: max-content;
+    animation: marquee-scroll 60s linear infinite;
 
-    .card-image-bottom {
-      flex: 0 0 800px;
+    &:hover {
+      animation-play-state: paused;
+    }
 
-      @media (max-width: $breakpoint-lg) {
-        flex: 0 0 600px;
+    .card-image {
+      flex: 0 0 360px;
+
+      // Offset every other card vertically
+      &:nth-child(even) {
+        margin-top: 3rem;
       }
 
       @media (max-width: $breakpoint-md) {
-        flex: 0 0 450px;
+        flex: 0 0 280px;
+
+        &:nth-child(even) {
+          margin-top: 2rem;
+        }
       }
 
       @media (max-width: $breakpoint-sm) {
-        flex: 0 0 320px;
+        flex: 0 0 240px;
+
+        &:nth-child(even) {
+          margin-top: 1.5rem;
+        }
       }
     }
   }
+}
 
-  &__nav {
-    display: flex;
-    align-items: center;
-    gap: $spacing-4;
-    flex-shrink: 0;
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
   }
-
-  &__arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border: $border-width solid $color-neutral-900;
-    border-radius: 50%;
-    background: $color-white;
-    color: $color-neutral-900;
-    cursor: pointer;
-    transition: all $transition-base;
-
-    &:hover {
-      background: $color-neutral-900;
-      color: $color-white;
-    }
-
-    &:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-
-      &:hover {
-        background: $color-white;
-        color: $color-neutral-900;
-      }
-    }
-  }
-
-  &__pagination {
-    display: flex;
-    align-items: center;
-    gap: $spacing-2;
-  }
-
-  &__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: $color-neutral-300;
-    border: none;
-    cursor: pointer;
-    transition: all $transition-base;
-
-    &:hover {
-      background: $color-neutral-600;
-    }
-
-    &.is-active {
-      background: $color-primary;
-      width: 24px;
-      border-radius: 5px;
-    }
+  100% {
+    transform: translateX(-50%);
   }
 }

@@ -6,20 +6,27 @@
 // --------------------------------------------------------------------------
 // Colors
 // --------------------------------------------------------------------------
-$color-primary: #0452A8;       // Blue - main brand color
-$color-primary-light: #1674DB;
-$color-primary-muted: #D1DDEB;
-$color-primary-extra-light: #E6F0FC;
+$color-primary: #469974;       // Green - main brand color
+$color-primary-dark: #357A5C;
+$color-primary-light: #5AB88A;
+$color-primary-muted: #A8CCBA;
+$color-primary-extra-light: #E0F0E8;
 
-$color-secondary: #F37B43;     // Orange - accent color
-$color-secondary-light: #FE925F;
-$color-secondary-muted: #F3DDD2;
-$color-secondary-extra-light: #FFF1EB;
+$color-secondary: #2E1B46;     // Deep Purple - accent color
+$color-secondary-dark: #1F1230;
+$color-secondary-light: #4A3266;
+$color-secondary-muted: #9B87B2;
+$color-secondary-extra-light: #E4DCF0;
 
-$color-tertiary: #469974;      // Green - tertiary color
-$color-tertiary-light: #51B88A;
-$color-tertiary-muted: #D1E5DD;
-$color-tertiary-extra-light: #E6F7F0;
+$color-tertiary: #A7764E;      // Warm Copper - tertiary color
+$color-tertiary-dark: #8A6040;
+$color-tertiary-light: #C08E64;
+$color-tertiary-muted: #DCCBBA;
+$color-tertiary-extra-light: #F2E9E0;
+
+$color-sand: #FFFAED;           // Ivory warm neutral
+$color-sand-dark: #F5EDDA;
+$color-sand-light: #FFFDF7;
 
 $color-neutral-900: #1A1A1A;
 $color-neutral-800: #3D3D3D;
@@ -35,7 +42,7 @@ $color-neutral-50: #FAFAFA;
 $color-white: #FFFFFF;
 $color-black: #000000;
 
-$color-success: #469974;
+$color-success: #469974;       // Matches primary
 $color-warning: #F59E0B;
 $color-error: #EF4444;
 
@@ -52,19 +59,21 @@ $color-text-inverse: $color-white;
 $color-text-link: $color-primary;
 
 // Gradients
-$gradient-primary-secondary: linear-gradient(45deg, $color-primary 0%, $color-secondary 100%);
-$gradient-primary-tertiary: linear-gradient(45deg, $color-primary 0%, $color-tertiary 100%);
+$gradient-primary: linear-gradient(45deg, $color-primary 0%, $color-primary-light 100%);
+$gradient-secondary: linear-gradient(180deg, $color-secondary 0%, $color-secondary-light 100%);
+$gradient-tertiary: linear-gradient(180deg, $color-tertiary 0%, $color-tertiary-dark 100%);
+$gradient-ivory: linear-gradient(45deg, $color-sand 0%, $color-sand-light 100%);
 
 // --------------------------------------------------------------------------
 // Typography
 // --------------------------------------------------------------------------
-$font-family-base: 'Cabin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $font-family-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
 // Font sizes (using fluid type scale)
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
-$font-size-base: 1.1875rem; // 19px
+$font-size-base: 1.0625rem; // 17px
 $font-size-lg: 1.125rem;
 $font-size-xl: 1.25rem;
 $font-size-2xl: 1.75rem;  // 28px (was 36px)
@@ -107,8 +116,8 @@ $spacing-40: 10rem;    // 160px
 
 // Section spacing
 $section-padding-sm: $spacing-5;
-$section-padding: $spacing-16;
-$section-padding-lg: $spacing-24;
+$section-padding: $spacing-24;
+$section-padding-lg: $spacing-32;
 
 // --------------------------------------------------------------------------
 // Layout

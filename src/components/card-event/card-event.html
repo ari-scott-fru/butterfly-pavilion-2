@@ -6,63 +6,56 @@
   - event_image (image)
   - event_category (select: adult, family, kids)
   - event_title (text)
+  - event_description (textarea)
   - event_time (text)
-  - event_date (text)
-  - event_button (link)
+  - event_month (text) - e.g. "MAR"
+  - event_day (text) - e.g. "21"
+  - event_link (link)
+
+  Variant classes (required):
+  - card-event--adult: primary color tag + date
+  - card-event--family: secondary color tag + date
+  - card-event--kids: brown/tertiary color tag + date
 
   Usage:
   <include src="components/card-event/card-event.html">
+    <yield name="class">card-event--family</yield>
     <yield name="image"><img src="/path/to/image.jpg" alt="Event name"></yield>
     <yield name="category">Family Program</yield>
     <yield name="title">Event Title</yield>
+    <yield name="description">A short description of the event.</yield>
     <yield name="time">10:00 AM - 12:00 PM</yield>
-    <yield name="date">Saturday, March 15</yield>
-    <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
-    <yield name="class">card-event--secondary</yield>
+    <yield name="month">MAR</yield>
+    <yield name="day">21</yield>
+    <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="text">Learn More</yield><yield name="url">#</yield></include></yield>
   </include>
-
-  Class variants (use matching category):
-  - card-event--primary: Blue theme → category: "Adult Program"
-  - card-event--secondary: Orange theme → category: "Family Program"
-  - card-event--tertiary: Green theme → category: "Kids Program"
 -->
 <article class="card-event <yield name="class"></yield>">
   <div class="card-event__image-wrapper">
     <yield name="image">
       <img src="https://images.unsplash.com/photo-1559253664-ca249d4608c6?w=400&q=80" alt="Event" class="card-event__image">
     </yield>
+    <div class="card-event__date">
+      <span class="card-event__month"><yield name="month">MAR</yield></span>
+      <span class="card-event__day"><yield name="day">21</yield></span>
+    </div>
   </div>
   <div class="card-event__content">
-    <div class="card-event__tag">
+    <div class="card-event__tags">
       <span class="tag"><yield name="category">Family Program</yield></span>
+      <span class="tag"><yield name="time">10:00 AM - 12:00 PM</yield></span>
     </div>
     <h3 class="card-event__title h5">
       <yield name="title">Event Title</yield>
     </h3>
-    <div class="card-event__meta">
-      <div class="card-event__meta-item">
-        <svg class="card-event__meta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
-        </svg>
-        <span><yield name="time">10:00 AM - 12:00 PM</yield></span>
-      </div>
-      <div class="card-event__meta-item">
-        <svg class="card-event__meta-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
-        <span><yield name="date">Saturday, March 15</yield></span>
-      </div>
-    </div>
+    <p class="card-event__description">
+      <yield name="description">Join us for this exciting event at the Butterfly Pavilion.</yield>
+    </p>
     <div class="card-event__action">
-      <yield name="button">
-        <include src="components/button/button.html">
+      <yield name="link">
+        <include src="components/link-arrow/link-arrow.html">
           <yield name="text">Learn More</yield>
           <yield name="url">#</yield>
-          <yield name="class">btn--white</yield>
         </include>
       </yield>
     </div>

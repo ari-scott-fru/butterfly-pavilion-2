@@ -1,5 +1,5 @@
 // ==========================================================================
-// Stats Block
+// Stats Block (standalone usage outside hero)
 // ==========================================================================
 @use '../../scss/variables' as *;
 
@@ -18,18 +18,20 @@
   }
 
   &__item {
-    text-align: center;
+    text-align: left;
     margin-bottom: 0;
+    padding-left: $spacing-6;
+    border-left: 3px solid $color-primary;
   }
 
   &__value {
-    color: $color-white;
+    color: $color-neutral-900;
     margin-bottom: $spacing-1;
   }
 
   &__label {
     font-size: $font-size-base;
-    color: rgba($color-white, 0.85);
+    color: $color-text-muted;
     margin: 0;
 
     @media (min-width: $breakpoint-md) {

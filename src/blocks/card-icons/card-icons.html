@@ -3,7 +3,7 @@
   WordPress: ACF Block - acf/card-icons
 
   ACF Fields:
-  - card_icons_images (gallery) - required left images that fade on scroll
+  - card_icons_image (image) - optional left image
   - card_icons_headline (text) - optional
   - card_icons_description (textarea) - optional
   - card_icons_items (repeater)
@@ -14,10 +14,7 @@
 
   Usage:
   <include src="blocks/card-icons/card-icons.html">
-    <yield name="images">
-      <img src="image1.jpg" alt="" class="card-icons__img">
-      <img src="image2.jpg" alt="" class="card-icons__img">
-    </yield>
+    <yield name="image"><img src="image.jpg" alt=""></yield>
     <yield name="headline">Section Title</yield>
     <yield name="description">Section description text.</yield>
     <yield name="items">
@@ -26,36 +23,27 @@
   </include>
 -->
 <section class="card-icons <yield name="class"></yield>">
-  <img src="/assets/images/client-images/butterfly-graphic.png" alt="" class="card-icons__butterfly" aria-hidden="true">
   <div class="container">
+    <div class="card-icons__header">
+      <yield name="headline"></yield>
+      <yield name="description"></yield>
+    </div>
     <div class="card-icons__layout">
-      <div class="card-icons__image" data-animate-image-fade>
-        <yield name="images">
-          <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Butterfly" class="card-icons__img">
-          <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Butterfly exhibit" class="card-icons__img">
-          <img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Colorful butterfly" class="card-icons__img">
-        </yield>
+      <div class="card-icons__image">
+        <yield name="image"></yield>
       </div>
-      <div class="card-icons__content">
-        <div class="card-icons__header">
-          <yield name="headline"></yield>
-          <yield name="description"></yield>
-        </div>
-        <div class="card-icons__grid">
-          <yield name="items">
-            <article class="card-icon" data-animate="fade-in">
-              <div class="card-icon__icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                </svg>
-              </div>
-              <div class="card-icon__content">
-                <h3 class="card-icon__title h5">Feature Title</h3>
-                <p class="card-icon__description">Feature description goes here.</p>
-              </div>
-            </article>
-          </yield>
-        </div>
+      <div class="card-icons__grid">
+        <yield name="items">
+          <article class="card-icon" data-animate="fade-in">
+            <div class="card-icon__icon">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="card-icon__content">
+              <h3 class="card-icon__title h5">Feature Title</h3>
+              <p class="card-icon__description">Feature description goes here.</p>
+            </div>
+          </article>
+        </yield>
       </div>
     </div>
   </div>

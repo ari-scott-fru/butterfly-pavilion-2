@@ -29,39 +29,22 @@
 
   Note: class yield adds utility classes (e.g., "section" for padding), body is optional
 -->
-<section class="card-carousel <yield name="class"></yield>" data-carousel>
+<section class="card-carousel <yield name="class"></yield>" data-marquee>
   <div class="container">
     <div class="card-carousel__header">
-      <div class="card-carousel__header-left">
-        <h2 class="card-carousel__headline">
-          <yield name="headline">Block Headline</yield>
-        </h2>
-        <yield name="body" optional>
-          <p class="card-carousel__body">Optional body copy for the block goes here.</p>
-        </yield>
-      </div>
-      <div class="card-carousel__header-right">
-        <div class="card-carousel__nav">
-          <button class="card-carousel__arrow card-carousel__arrow--prev" data-carousel-prev aria-label="Previous">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-          <div class="card-carousel__pagination" data-carousel-pagination></div>
-          <button class="card-carousel__arrow card-carousel__arrow--next" data-carousel-next aria-label="Next">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-        </div>
-      </div>
+      <h2 class="card-carousel__headline">
+        <yield name="headline">Block Headline</yield>
+      </h2>
+      <yield name="body" optional>
+        <p class="card-carousel__body">Optional body copy for the block goes here.</p>
+      </yield>
     </div>
-    <div class="card-carousel__carousel">
-      <div class="card-carousel__track" data-carousel-track>
-        <yield name="cards">
-          <!-- Cards go here -->
-        </yield>
-      </div>
+  </div>
+  <div class="card-carousel__marquee">
+    <div class="card-carousel__track" data-marquee-track>
+      <yield name="cards">
+        <!-- Cards go here -->
+      </yield>
     </div>
   </div>
 </section>

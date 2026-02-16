@@ -4,11 +4,26 @@
 @use '../scss/variables' as *;
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: $spacing-4;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - #{$container-margin * 2});
+  max-width: $container-max-width;
   z-index: $z-index-sticky;
-  background-color: $color-neutral-100;
-  border-bottom: 1px solid $color-primary-extra-light;
+  background: rgba($color-white, 0.95);
+  border: 1px solid $color-neutral-200;
+  border-radius: $border-radius-full;
+  transition: top $transition-base, width $transition-base, max-width $transition-base, background $transition-base, border-color $transition-base, border-radius $transition-base;
+
+  &.is-scrolled {
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    background: rgba($color-white, 0.8);
+    border-color: transparent;
+    border-radius: 0;
+  }
 
   &__inner {
     display: flex;
@@ -31,6 +46,10 @@
 
     @media (min-width: $breakpoint-md) {
       height: 56px;
+    }
+
+    &--white {
+      display: none;
     }
   }
 
@@ -97,6 +116,6 @@
     height: 2px;
     background-color: $color-neutral-800;
     border-radius: 2px;
-    transition: transform $transition-base, opacity $transition-base;
+    transition: transform $transition-base, opacity $transition-base, background-color $transition-base;
   }
 }

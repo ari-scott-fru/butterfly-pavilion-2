@@ -8,7 +8,10 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/4e8fc116a9.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="../scss/main.scss">
   <link rel="stylesheet" href="../scss/design-system.scss">
@@ -16,7 +19,7 @@
 <body class="blocks-page">
 
   <!-- Page Header -->
-  <header class="blocks-header bg-gradient-primary-tertiary">
+  <header class="blocks-header bg-gradient-secondary">
     <div class="container">
       <h1 class="blocks-header__title">Blocks</h1>
       <p class="blocks-header__desc">Full-width preview of all page blocks and their variants.</p>
@@ -41,7 +44,7 @@
     <section id="hero-landing" class="block-section">
       <div class="block-section__header">
         <h2 class="block-section__title">Hero Landing</h2>
-        <p class="block-section__desc">Hero section with headline, body copy, dual CTAs, and image carousel.</p>
+        <p class="block-section__desc">Hero section with headline, body copy, and dual CTAs.</p>
         <div class="block-variant-tabs">
           <span class="block-variant-tab">No Variants</span>
         </div>
@@ -53,18 +56,6 @@
             <yield name="body"><p class="lead">Experience the world's first accredited invertebrate zoo.</p></yield>
             <yield name="primaryButton"><a href="#" class="btn btn--primary">Get Tickets</a></yield>
             <yield name="secondaryButton"><a href="#" class="btn btn--outline">Plan Your Visit</a></yield>
-            <yield name="carouselColumn1">
-              <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-              <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-              <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-              <img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-            </yield>
-            <yield name="carouselColumn2">
-              <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-              <img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-              <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-              <img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Butterfly" class="hero-landing__carousel-image" loading="eager">
-            </yield>
           </include>
         </div>
       </div>
@@ -114,7 +105,7 @@
       <div class="block-variant-previews">
         <div class="block-variant__preview block-variant__preview--active">
           <include src="blocks/stats/stats.html">
-            <yield name="class">bg-gradient-primary-tertiary</yield>
+            <yield name="class">bg-gradient-secondary</yield>
             <yield name="items">
               <div class="stats__item"><div class="stats__value h2">1.6K+</div><p class="stats__label">Live Butterflies</p></div>
               <div class="stats__item"><div class="stats__value h2">200+</div><p class="stats__label">Species</p></div>
@@ -138,34 +129,32 @@
       <div class="block-variant-previews">
         <div class="block-variant__preview block-variant__preview--active">
           <include src="blocks/card-icons/card-icons.html">
-            <yield name="class">section</yield>
-            <yield name="images">
-              <img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Butterfly on flower" class="card-icons__img">
-              <img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Butterfly exhibit" class="card-icons__img">
-              <img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Colorful butterfly" class="card-icons__img">
-            </yield>
+            <yield name="class">section bg-gradient-primary</yield>
             <yield name="headline">Why Visit Us</yield>
             <yield name="description">Discover what makes the Butterfly Pavilion a world-class destination for nature lovers of all ages.</yield>
             <yield name="items">
               <include src="components/card-icon/card-icon.html">
-                <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></yield>
+                <yield name="icon"><i class="fa-solid fa-layer-group"></i></yield>
                 <yield name="title">Educational Programs</yield>
                 <yield name="description">Engaging workshops and classes for all ages, from school groups to adult learners.</yield>
-                <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
               </include>
               <include src="components/card-icon/card-icon.html">
-                <yield name="class">card-icon--secondary</yield>
-                <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path></svg></yield>
+                <yield name="icon"><i class="fa-solid fa-face-smile"></i></yield>
                 <yield name="title">Family Friendly</yield>
                 <yield name="description">Interactive exhibits and activities designed for visitors of all ages to enjoy together.</yield>
-                <yield name="button"><include src="components/button/button.html"><yield name="text">Plan Visit</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
+                <yield name="buttonText">Plan Visit</yield>
               </include>
               <include src="components/card-icon/card-icon.html">
-                <yield name="class">card-icon--tertiary</yield>
-                <yield name="icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></yield>
+                <yield name="icon"><i class="fa-solid fa-circle-check"></i></yield>
                 <yield name="title">Conservation Focus</yield>
                 <yield name="description">Supporting butterfly habitats and invertebrate conservation efforts worldwide.</yield>
-                <yield name="button"><include src="components/button/button.html"><yield name="text">Support Us</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
+                <yield name="buttonText">Support Us</yield>
+              </include>
+              <include src="components/card-icon/card-icon.html">
+                <yield name="icon"><i class="fa-solid fa-ticket"></i></yield>
+                <yield name="title">Membership</yield>
+                <yield name="description">Enjoy unlimited visits, exclusive events, and discounts with an annual membership.</yield>
+                <yield name="buttonText">Join Now</yield>
               </include>
             </yield>
           </include>
@@ -229,30 +218,29 @@
             <yield name="headline">Upcoming Events</yield>
             <yield name="body"><p class="card-carousel__body">Discover exciting programs and activities for the whole family.</p></yield>
             <yield name="cards">
-              <include src="components/card-image-bottom/card-image-bottom.html">
-                <yield name="tag">Events</yield>
+              <include src="components/card-image/card-image.html">
                 <yield name="title">Live Chrysalis Camera</yield>
                 <yield name="description">Watch butterflies emerge in real-time from our live chrysalis display.</yield>
-                <yield name="button"><include src="components/button/button.html"><yield name="text">Watch Now</yield><yield name="url">#</yield><yield name="class">btn--outline</yield></include></yield>
-                <yield name="image"><img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Chrysalis" class="card-image-bottom__image"></yield>
+                <yield name="image"><img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Chrysalis" class="card-image__image"></yield>
+                <yield name="link"><a href="#" class="btn btn--outline">Watch Now</a></yield>
               </include>
-              <include src="components/card-image-bottom/card-image-bottom.html">
+              <include src="components/card-image/card-image.html">
                 <yield name="title">Butterfly Workshop</yield>
                 <yield name="description">Interactive workshop about butterfly life cycles and conservation.</yield>
-                <yield name="button"><include src="components/button/button.html"><yield name="text">Register</yield><yield name="url">#</yield><yield name="class">btn--outline</yield></include></yield>
-                <yield name="image"><img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Workshop" class="card-image-bottom__image"></yield>
+                <yield name="image"><img src="/assets/images/client-images/DSCN5468 (1) 1.jpg" alt="Workshop" class="card-image__image"></yield>
+                <yield name="link"><a href="#" class="btn btn--outline">Register</a></yield>
               </include>
-              <include src="components/card-image-bottom/card-image-bottom.html">
+              <include src="components/card-image/card-image.html">
                 <yield name="title">New Species Arrival</yield>
                 <yield name="description">Rare Blue Morpho butterflies have arrived from Costa Rica.</yield>
-                <yield name="button"><include src="components/button/button.html"><yield name="text">Read More</yield><yield name="url">#</yield><yield name="class">btn--outline</yield></include></yield>
-                <yield name="image"><img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Morpho" class="card-image-bottom__image"></yield>
+                <yield name="image"><img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Morpho" class="card-image__image"></yield>
+                <yield name="link"><a href="#" class="btn btn--outline">Read More</a></yield>
               </include>
-              <include src="components/card-image-bottom/card-image-bottom.html">
+              <include src="components/card-image/card-image.html">
                 <yield name="title">Summer Camp Registration</yield>
                 <yield name="description">Nature discovery camps for kids ages 6-12. Limited spots available.</yield>
-                <yield name="button"><include src="components/button/button.html"><yield name="text">Enroll</yield><yield name="url">#</yield><yield name="class">btn--outline</yield></include></yield>
-                <yield name="image"><img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Summer camp" class="card-image-bottom__image"></yield>
+                <yield name="image"><img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Summer camp" class="card-image__image"></yield>
+                <yield name="link"><a href="#" class="btn btn--outline">Enroll</a></yield>
               </include>
             </yield>
           </include>
@@ -277,75 +265,83 @@
             <yield name="description">Join us for educational programs, family activities, and special events throughout the year.</yield>
             <yield name="cta"><include src="components/button/button.html"><yield name="text">View All Events</yield><yield name="url">#</yield></include></yield>
             <yield name="items">
-              <div class="card-events__row card-events__row--1">
-                <div class="card-events__item card-events__item--1" data-animate="fade-up">
-                  <include src="components/card-event/card-event.html">
-                    <yield name="class">card-event--primary</yield>
-                    <yield name="image"><img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Photography workshop" class="card-event__image"></yield>
-                    <yield name="category">Adult Program</yield>
-                    <yield name="title">Butterfly Photography Workshop</yield>
-                    <yield name="time">6:00 PM - 8:00 PM</yield>
-                    <yield name="date">Friday, March 21</yield>
-                    <yield name="button"><include src="components/button/button.html"><yield name="text">Register</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
-                  </include>
-                </div>
-                <div class="card-events__item card-events__item--2" data-animate="fade-up">
-                  <include src="components/card-event/card-event.html">
-                    <yield name="class">card-event--secondary</yield>
-                    <yield name="image"><img src="/assets/images/client-images/IMG_4154 (1) 1.jpg" alt="Family butterfly walk" class="card-event__image"></yield>
-                    <yield name="category">Family Program</yield>
-                    <yield name="title">Family Butterfly Walk</yield>
-                    <yield name="time">10:00 AM - 12:00 PM</yield>
-                    <yield name="date">Saturday, March 22</yield>
-                    <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
-                  </include>
-                </div>
-                <div class="card-events__item card-events__item--3" data-animate="fade-up">
-                  <include src="components/card-event/card-event.html">
-                    <yield name="class">card-event--tertiary</yield>
-                    <yield name="image"><img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Bug camp" class="card-event__image"></yield>
-                    <yield name="category">Kids Program</yield>
-                    <yield name="title">Bug Camp Adventure</yield>
-                    <yield name="time">9:00 AM - 3:00 PM</yield>
-                    <yield name="date">Mon - Fri</yield>
-                    <yield name="button"><include src="components/button/button.html"><yield name="text">Enroll</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
-                  </include>
-                </div>
+              <div class="card-events__item" data-animate="fade-up">
+                <include src="components/card-event/card-event.html">
+                  <yield name="class">card-event--adult</yield>
+                  <yield name="image"><img src="/assets/images/client-images/DSCN4721 (1) 1.jpg" alt="Photography workshop" class="card-event__image"></yield>
+                  <yield name="category">Adult Program</yield>
+                  <yield name="title">Butterfly Photography Workshop</yield>
+                  <yield name="description">Learn macro techniques and capture stunning close-ups of our tropical butterflies with expert guidance.</yield>
+                  <yield name="time">6:00 PM - 8:00 PM</yield>
+                  <yield name="month">MAR</yield>
+                  <yield name="day">21</yield>
+                  <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="text">Register</yield><yield name="url">#</yield></include></yield>
+                </include>
               </div>
-              <div class="card-events__row card-events__row--2">
-                <div class="card-events__item card-events__item--4" data-animate="fade-up">
-                  <include src="components/card-event/card-event.html">
-                    <yield name="class">card-event--tertiary</yield>
-                    <yield name="image"><img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Nature explorers" class="card-event__image"></yield>
-                    <yield name="category">Kids Program</yield>
-                    <yield name="title">Nature Explorers</yield>
-                    <yield name="time">10:00 AM - 12:00 PM</yield>
-                    <yield name="date">Saturdays</yield>
-                    <yield name="button"><include src="components/button/button.html"><yield name="text">Sign Up</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
-                  </include>
-                </div>
-                <div class="card-events__item card-events__item--5" data-animate="fade-up">
-                  <include src="components/card-event/card-event.html">
-                    <yield name="class">card-event--primary</yield>
-                    <yield name="image"><img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Wine and wings" class="card-event__image"></yield>
-                    <yield name="category">Adult Program</yield>
-                    <yield name="title">Wine & Wings Evening</yield>
-                    <yield name="time">7:00 PM - 9:00 PM</yield>
-                    <yield name="date">Friday, April 4</yield>
-                    <yield name="button"><include src="components/button/button.html"><yield name="text">Get Tickets</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
-                  </include>
-                </div>
-                <div class="card-events__item card-events__item--6" data-animate="fade-up">
-                  <include src="components/card-event/card-event.html">
-                    <yield name="class">card-event--secondary</yield>
-                    <yield name="image"><img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Spring safari" class="card-event__image"></yield>
-                    <yield name="category">Family Program</yield>
-                    <yield name="title">Spring Break Safari</yield>
-                    <yield name="time">10:00 AM - 4:00 PM</yield>
-                    <yield name="date">March 24 - 28</yield>
-                    <yield name="button"><include src="components/button/button.html"><yield name="text">Learn More</yield><yield name="url">#</yield><yield name="class">btn--white</yield></include></yield>
-                  </include>
-                </div>
+              <div class="card-events__item" data-animate="fade-up">
+                <include src="components/card-event/card-event.html">
+                  <yield name="class">card-event--family</yield>
+                  <yield name="image"><img src="/assets/images/client-images/IMG_7735 (1) 1.jpg" alt="Family butterfly walk" class="card-event__image"></yield>
+                  <yield name="category">Family Program</yield>
+                  <yield name="title">Family Butterfly Walk</yield>
+                  <yield name="description">Stroll through our gardens with a naturalist and discover the butterflies and pollinators that call Colorado home.</yield>
+                  <yield name="time">10:00 AM - 12:00 PM</yield>
+                  <yield name="month">MAR</yield>
+                  <yield name="day">22</yield>
+                  <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="text">Learn More</yield><yield name="url">#</yield></include></yield>
+                </include>
+              </div>
+              <div class="card-events__item" data-animate="fade-up">
+                <include src="components/card-event/card-event.html">
+                  <yield name="class">card-event--kids</yield>
+                  <yield name="image"><img src="/assets/images/client-images/IMG_6072 (1) 1.jpg" alt="Bug camp" class="card-event__image"></yield>
+                  <yield name="category">Kids Program</yield>
+                  <yield name="title">Bug Camp Adventure</yield>
+                  <yield name="description">A full day of hands-on exploration, crafts, and up-close encounters with insects and arthropods.</yield>
+                  <yield name="time">9:00 AM - 3:00 PM</yield>
+                  <yield name="month">MAR</yield>
+                  <yield name="day">24</yield>
+                  <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="text">Enroll</yield><yield name="url">#</yield></include></yield>
+                </include>
+              </div>
+              <div class="card-events__item" data-animate="fade-up">
+                <include src="components/card-event/card-event.html">
+                  <yield name="class">card-event--kids</yield>
+                  <yield name="image"><img src="/assets/images/client-images/IMG_3396 (1) 1.jpg" alt="Nature explorers" class="card-event__image"></yield>
+                  <yield name="category">Kids Program</yield>
+                  <yield name="title">Nature Explorers</yield>
+                  <yield name="description">Kids ages 5-8 investigate habitats, observe live creatures, and become junior scientists for the morning.</yield>
+                  <yield name="time">10:00 AM - 12:00 PM</yield>
+                  <yield name="month">MAR</yield>
+                  <yield name="day">29</yield>
+                  <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="text">Sign Up</yield><yield name="url">#</yield></include></yield>
+                </include>
+              </div>
+              <div class="card-events__item" data-animate="fade-up">
+                <include src="components/card-event/card-event.html">
+                  <yield name="class">card-event--adult</yield>
+                  <yield name="image"><img src="/assets/images/client-images/IMG_4167 (1) 1.jpg" alt="Wine and wings" class="card-event__image"></yield>
+                  <yield name="category">Adult Program</yield>
+                  <yield name="title">Wine & Wings Evening</yield>
+                  <yield name="description">Sip local wines while butterflies flutter around you in an unforgettable after-hours experience.</yield>
+                  <yield name="time">7:00 PM - 9:00 PM</yield>
+                  <yield name="month">APR</yield>
+                  <yield name="day">4</yield>
+                  <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="text">Get Tickets</yield><yield name="url">#</yield></include></yield>
+                </include>
+              </div>
+              <div class="card-events__item" data-animate="fade-up">
+                <include src="components/card-event/card-event.html">
+                  <yield name="class">card-event--family</yield>
+                  <yield name="image"><img src="/assets/images/client-images/IMG_1462 (1) (1) 1.jpg" alt="Spring safari" class="card-event__image"></yield>
+                  <yield name="category">Family Program</yield>
+                  <yield name="title">Spring Break Safari</yield>
+                  <yield name="description">Explore the pavilion with themed scavenger hunts, live demos, and family-friendly activities all day long.</yield>
+                  <yield name="time">10:00 AM - 4:00 PM</yield>
+                  <yield name="month">MAR</yield>
+                  <yield name="day">24</yield>
+                  <yield name="link"><include src="components/link-arrow/link-arrow.html"><yield name="text">Learn More</yield><yield name="url">#</yield></include></yield>
+                </include>
               </div>
             </yield>
           </include>

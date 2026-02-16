@@ -13,9 +13,23 @@ import gsap from 'gsap';
  * Initialize all interactive animations
  */
 export function initInteractiveAnimations() {
+  initButtonTextEffect();
   initButtonHover();
   initCardHover();
   initMobileMenuToggle();
+}
+
+/**
+ * Wrap button text in a span for the fly-up hover effect
+ * Sets data-text so CSS ::after can duplicate the label
+ */
+function initButtonTextEffect() {
+  document.querySelectorAll('.btn').forEach(btn => {
+    if (btn.querySelector('.btn__text')) return;
+    const text = btn.textContent.trim();
+    const inner = btn.innerHTML.trim();
+    btn.innerHTML = `<span class="btn__text" data-text="${text}">${inner}</span>`;
+  });
 }
 
 /**
@@ -179,6 +193,82 @@ export function initParallax(selector = '.hero__background-image', speed = 0.3) 
 }
 
 /**
+ * Scroll-driven rotation for decorative images
+ * @param {string} selector - CSS selector for elements to rotate
+ */
+export function initScrollRotate(selector = '[data-scroll-rotate]') {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach(element => {
+    const degrees = parseFloat(element.dataset.scrollRotate) || 360;
+
+    gsap.to(element, {
+      rotation: degrees,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  });
+}
+
+/**
+ * Scroll-driven horizontal translation for decorative elements
+ * @param {string} selector - CSS selector for elements to translate
+ */
+export function initScrollTranslateX(selector = '[data-scroll-translate-x]') {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach(element => {
+    const distance = parseFloat(element.dataset.scrollTranslateX) || -200;
+
+    gsap.to(element, {
+      x: distance,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: element.closest('section') || element.parentElement,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  });
+}
+
+/**
+ * Scroll-driven vertical translation for decorative elements
+ * @param {string} selector - CSS selector for elements to translate
+ */
+export function initScrollTranslateY(selector = '[data-scroll-translate-y]') {
+  const elements = document.querySelectorAll(selector);
+
+  elements.forEach(element => {
+    const distance = parseFloat(element.dataset.scrollTranslateY) || -200;
+    const rotation = parseFloat(element.dataset.scrollTranslateYRotate) || 0;
+
+    const props = {
+      y: distance,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: element.closest('section') || element.parentElement,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    };
+
+    if (rotation) {
+      props.rotation = rotation;
+    }
+
+    gsap.to(element, props);
+  });
+}
+
+/**
  * Counter animation for statistics
  * @param {string} selector - CSS selector for counter elements
  */
@@ -186,8 +276,9 @@ export function initCounters(selector = '[data-counter]') {
   const counters = document.querySelectorAll(selector);
 
   counters.forEach(counter => {
-    const target = parseInt(counter.dataset.counter, 10);
+    const target = parseFloat(counter.dataset.counter);
     const suffix = counter.dataset.counterSuffix || '';
+    const decimals = parseInt(counter.dataset.counterDecimals, 10) || 0;
     const duration = parseFloat(counter.dataset.counterDuration) || 2;
 
     const obj = { value: 0 };
@@ -202,7 +293,10 @@ export function initCounters(selector = '[data-counter]') {
         toggleActions: 'play none none none'
       },
       onUpdate: () => {
-        counter.textContent = Math.round(obj.value).toLocaleString() + suffix;
+        const formatted = decimals > 0
+          ? obj.value.toFixed(decimals)
+          : Math.round(obj.value).toLocaleString();
+        counter.textContent = formatted + suffix;
       }
     });
   });

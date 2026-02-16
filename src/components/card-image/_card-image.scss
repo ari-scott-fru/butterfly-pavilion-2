@@ -4,22 +4,30 @@
 @use '../../scss/variables' as *;
 
 .card-image {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform $transition-base;
-  padding-bottom: $spacing-4;
- 
+  background-color: transparent;
+  border-radius: $border-radius-2xl;
+  padding: $spacing-4;
+  border: 1px solid transparent;
+  transition: transform $transition-base, background-color $transition-base, box-shadow $transition-base, border-color $transition-base;
 
   &:hover {
     transform: translateY(-4px);
+    background-color: $color-white;
+    border-color: $color-sand-dark;
+    box-shadow: 0 0 0 1.5px #13141403, 0 1px 1px -.5px #13141403, 0 3px 3px -1.5px #13141403, 0 6px 6px -3px #13141403, 0 12px 12px -6px #13141403, 0 24px 24px -12px #13141403;
   }
 
   &__image-wrapper {
     position: relative;
-    aspect-ratio: 9 / 10;
+    aspect-ratio: 5 / 6;
     overflow: hidden;
     border-radius: $border-radius-2xl;
+    // border: 6px solid $color-white;
+    // box-shadow: $shadow-sm;
   }
 
   &__image {
@@ -36,51 +44,33 @@
   &__content {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    background-color: $color-white;
-    padding: $spacing-6;
-    border-radius: $border-radius-2xl;
-    margin-top: -4rem;
-    margin-left: $spacing-4;
-    margin-right: $spacing-4;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-
-    border: 1px solid $color-neutral-200;
-    box-shadow: 0 0 0 1px #1a3c5112, 0 4px 2px #1a3c5105, 0 8px 4px #1a3c5105, 0 16px 8px #1a3c5105, 0 32px 16px #1a3c5105;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -60px;
-      right: -60px;
-      width: 80px;
-      height: 80px;
-      background-image: url('/assets/images/client-images/butterfly-graphic.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      transform: scaleX(-1) rotate(45deg);
-      opacity: 0;
-      pointer-events: none;
-      transition: all $transition-slow;
-    }
-
-    .card-image:hover &::after {
-      bottom: -10px;
-      right: -10px;
-      opacity: 0.8;
-      transform: scaleX(-1) rotate(-15deg);
-    }
+    padding: $spacing-4 0 0;
   }
 
   &__title {
-    // Inherits margin from typography
+    margin-bottom: $spacing-2;
   }
 
   &__description {
-    flex: 1;
+    // color: $color-text-muted;
+    margin-bottom: 0;
+    transition: opacity $transition-base;
+
+    .card-image:hover & {
+      opacity: 0;
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    opacity: 0;
+    transition: opacity $transition-base;
+
+    .card-image:hover & {
+      opacity: 1;
+    }
   }
 
   // --------------------------------------------------------------------------

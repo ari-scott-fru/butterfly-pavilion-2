@@ -8,16 +8,41 @@
   align-items: center;
   justify-content: center;
   gap: $spacing-2;
-  padding: $spacing-4 $spacing-6;
+  padding: 0 $spacing-8;
   font-family: $font-family-base;
-  font-size: $font-size-lg;
+  // font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
+  color: $color-neutral-900;
   line-height: 1;
   text-decoration: none;
-  // border: 2px solid transparent;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-full;
   cursor: pointer;
+  overflow: hidden;
   transition: all $transition-fast;
+
+  // Text fly-up hover effect
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    gap: inherit;
+    position: relative;
+    padding: $spacing-4 0;
+    transition: transform $transition-base;
+
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: $spacing-4 0;
+      text-align: center;
+    }
+  }
+
+  &:hover &__text {
+    transform: translateY(-100%);
+  }
 
   &:focus-visible {
     outline: 2px solid $color-primary;
@@ -28,19 +53,19 @@
   // Variants
   // --------------------------------------------------------------------------
   &--primary {
-    background: linear-gradient(45deg, $color-primary 0%, $color-primary-light 100%);
+    background: $gradient-primary;
     border-color: transparent;
-    color: $color-white;
+    // color: $color-white;
 
     &:hover {
-      background: linear-gradient(45deg, darken($color-primary, 5%) 0%, darken($color-primary-light, 5%) 100%);
+      background: linear-gradient(45deg, $color-primary-light 0%, $color-primary-light 100%);
     }
   }
 
   &--outline {
     background-color: transparent;
     border: 1px solid  $color-primary;
-    color: $color-primary;
+    // color: $color-primary;
 
     &:hover {
       background-color: $color-primary;

@@ -13,22 +13,16 @@
     <yield name="description">Book your tickets today...</yield>
     <yield name="button"><include src="components/button/button.html"><yield name="text">Get Tickets</yield><yield name="url">/tickets.html</yield><yield name="class">btn--primary</yield></include></yield>
   </include>
-
-  For variants, use separate block files:
-  - cta-banner-secondary.html
-  - cta-banner-dark.html
 -->
-<section class="cta-banner" data-animate="fade-in">
+<section class="cta-banner <yield name="class"></yield>" data-animate="fade-in">
   <div class="container">
     <div class="cta-banner__inner">
-      <div class="cta-banner__content">
-        <h2 class="cta-banner__headline">
-          <yield name="headline">Ready to explore?</yield>
-        </h2>
-        <p class="cta-banner__description">
-          <yield name="description">Book your tickets today and discover the wonder of butterflies. Special group rates available.</yield>
-        </p>
-      </div>
+      <h2 class="cta-banner__headline">
+        <yield name="headline">Ready to explore?</yield>
+      </h2>
+      <p class="cta-banner__description body-lg">
+        <yield name="description">Book your tickets today and discover the wonder of butterflies. Special group rates available.</yield>
+      </p>
       <div class="cta-banner__action">
         <yield name="button">
           <include src="components/button/button.html">
@@ -39,5 +33,6 @@
         </yield>
       </div>
     </div>
+    <yield name="graphic"></yield>
   </div>
 </section>

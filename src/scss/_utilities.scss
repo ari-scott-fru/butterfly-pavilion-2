@@ -206,7 +206,7 @@
 }
 
 .bg-light {
-  background-color: $color-primary-extra-light;
+  background-color: $color-sand;
 }
 
 .bg-dark {
@@ -221,76 +221,23 @@
 // --------------------------------------------------------------------------
 // Background Gradients
 // --------------------------------------------------------------------------
-.bg-gradient-primary-secondary {
-  background: linear-gradient(45deg, $color-primary 0%, $color-secondary 100%);
+.bg-gradient-primary {
+  background: $gradient-primary;
   color: $color-text-inverse;
-
-  // Global: headlines and body copy white on gradient backgrounds
-  h1, h2, h3, h4, h5, h6,
-  .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: $color-white;
-  }
-
-  p {
-    color: rgba($color-white, 0.9);
-  }
-
-  // When has background image, gradient becomes overlay
-  &.has-bg-image {
-    position: relative;
-    background: none; // Remove gradient from element - comes from ::before instead
-    background-size: cover;
-    background-position: center;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(45deg, rgba($color-primary, 0.9) 0%, rgba($color-secondary, 0.9) 100%);
-      z-index: 0;
-    }
-
-    > * {
-      position: relative;
-      z-index: 1;
-    }
-  }
 }
 
-.bg-gradient-primary-tertiary {
-  background: linear-gradient(45deg, $color-primary 0%, $color-tertiary 100%);
+.bg-gradient-secondary {
+  background: $gradient-secondary;
   color: $color-text-inverse;
+}
 
-  // Global: headlines and body copy white on gradient backgrounds
-  h1, h2, h3, h4, h5, h6,
-  .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: $color-white;
-  }
+.bg-gradient-tertiary {
+  background: $gradient-tertiary;
+  color: $color-text-inverse;
+}
 
-  p {
-    color: rgba($color-white, 0.9);
-  }
-
-  // When has background image, gradient becomes overlay
-  &.has-bg-image {
-    position: relative;
-    background: none; // Remove gradient from element - comes from ::before instead
-    background-size: cover;
-    background-position: center;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(45deg, rgba($color-primary, 0.9) 0%, rgba($color-tertiary, 0.9) 100%);
-      z-index: 0;
-    }
-
-    > * {
-      position: relative;
-      z-index: 1;
-    }
-  }
+.bg-gradient-ivory {
+  background: $gradient-ivory;
 }
 
 // --------------------------------------------------------------------------

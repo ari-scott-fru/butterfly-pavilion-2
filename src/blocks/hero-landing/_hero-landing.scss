@@ -5,23 +5,45 @@
 
 .hero-landing {
   position: relative;
-  background-color: $color-white;
+  background-color: $color-neutral-900;
   overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 8rem;
+  display: flex;
+  align-items: center;
 
-  &__butterfly {
+  // --------------------------------------------------------------------------
+  // Video Background
+  // --------------------------------------------------------------------------
+  &__video-bg {
     position: absolute;
+    inset: 0;
     z-index: 0;
-    pointer-events: none;
-    // opacity: 0.7;
-    left:-2%;
-    top:-9%;
-    width:240px;
-    transform: rotate(135deg);
 
-
-    @media (min-width: 1990px) {
-     top:4%;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
+  }
+
+
+  // --------------------------------------------------------------------------
+  // Left-side Overlay
+  // --------------------------------------------------------------------------
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to right, rgba($color-black, 0.8) 0%, rgba($color-black, 0.45) 40%, transparent 70%);
+  }
+
+  // --------------------------------------------------------------------------
+  // Content
+  // --------------------------------------------------------------------------
+  .container {
+    position: relative;
+    z-index: 2;
   }
 
   &__grid {
@@ -30,31 +52,29 @@
     gap: $spacing-12;
     align-items: center;
 
-    @media (min-width: $breakpoint-md) {
-      grid-template-columns: 5fr 6fr;
-      gap: calc(100% / 12); // 1 column of space
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(12, 1fr);
+      gap: $grid-gutter;
     }
   }
 
   &__content {
     margin: 0;
     text-align: left;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-column: span 6;
+    }
   }
 
   &__headline {
-    .text-rotate {
-      color: $color-primary;
-      font-weight: $font-weight-bold;
-      text-decoration: underline;
-      text-decoration-thickness: 3px;
-      text-underline-offset: 4px;
-    }
+    color: $color-white;
   }
 
   &__body {
     font-size: $font-size-lg;
     line-height: $line-height-relaxed;
-    color: $color-text-secondary;
+    color: rgba($color-white, 0.85);
     margin-bottom: $spacing-12;
 
     p {
@@ -74,60 +94,52 @@
   }
 
   // --------------------------------------------------------------------------
-  // Image Carousel
+  // Stats Bar
   // --------------------------------------------------------------------------
-  &__carousel {
-    display: none;
-    position: relative;
-    height: 800px;
-    gap: $spacing-4;
-    overflow: hidden;
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 10%,
-      black 90%,
-      transparent 100%
-    );
+  &__stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: rgba($color-white, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba($color-white, 0.2);
+    padding: $spacing-10 0;
+  }
+
+  &__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-8;
 
     @media (min-width: $breakpoint-md) {
-      display: flex;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-6;
     }
   }
 
-  &__carousel-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-4;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    // Allow column to be taller than container
-    height: fit-content;
-    flex-shrink: 0;
-
-    &--up {
-      animation-name: scroll-up;
-      animation-duration: 30s;
-    }
-
-    &--down {
-      animation-name: scroll-down;
-      animation-duration: 36s;
-    }
-
-    &:hover {
-      animation-play-state: paused;
-    }
+  &__stats-item {
+    text-align: left;
+    margin-bottom: 0;
+    padding-left: $spacing-6;
+    border-left: 3px solid rgba($color-white, 0.4);
   }
 
-  &__carousel-image {
-    width: 100%;
-    height: auto;
-    border-radius: $border-radius-lg;
-    object-fit: cover;
-    aspect-ratio: 4 / 3;
-    flex-shrink: 0;
+  &__stats-value {
+    color: $color-white;
+    margin-bottom: $spacing-1;
+  }
+
+  &__stats-label {
+    font-size: $font-size-base;
+    color: rgba($color-white, 0.7);
+    margin: 0;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $font-size-lg;
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -178,22 +190,3 @@
   }
 }
 
-// Keyframe animations for carousel
-// Use calc to account for gap spacing (half gap adjustment for seamless loop)
-@keyframes scroll-up {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(calc(-50% - #{$spacing-4 / 2}));
-  }
-}
-
-@keyframes scroll-down {
-  0% {
-    transform: translateY(calc(-50% - #{$spacing-4 / 2}));
-  }
-  100% {
-    transform: translateY(0);
-  }
-}

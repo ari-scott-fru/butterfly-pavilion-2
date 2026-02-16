@@ -8,54 +8,25 @@
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: $spacing-8;
+    // gap: $spacing-8;
     align-items: center;
 
     @media (min-width: $breakpoint-md) {
-      grid-template-columns: 1fr 1fr;
-      gap: $spacing-12;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      gap: $spacing-40;
+      grid-template-columns: 6fr 4fr;
+      gap: 0;
     }
   }
 
   &__media {
     position: relative;
-    // Allow overflow for secondary image to extend outside
     overflow: visible;
-  }
-
-  &__graphic {
-    position: absolute;
-    left: calc(-10% + 40px);
-    top: 40%;
-    transform: translateY(-50%) rotate(15deg);
-    width: 180px;
-    z-index: -1;
-    pointer-events: none;
-    opacity: 0; // Hidden initially, animated in by JS
-
-    @media (max-width: $breakpoint-md) {
-      display: none;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      width: 240px;
-      left: calc(-15% + 40px);
-    }
   }
 
   &__image-primary {
     position: relative;
     border-radius: $border-radius-xl;
     overflow: hidden;
-    width: 85%;
-
-    @media (min-width: $breakpoint-md) {
-      width: 80%;
-    }
+    width: 100%;
   }
 
   &__image {
@@ -63,60 +34,41 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    min-height: 400px;
+    min-height: 300px;
 
     @media (min-width: $breakpoint-md) {
-      min-height: 500px;
+      min-height: 400px;
     }
 
     @media (min-width: $breakpoint-lg) {
-      min-height: 600px;
-    }
-  }
-
-  &__image-secondary {
-    position: absolute;
-    bottom: -$spacing-8;
-    right: -$spacing-4;
-    width: 45%;
-    border-radius: $border-radius-xl;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border: 4px solid $color-white;
-
-    @media (min-width: $breakpoint-md) {
-      bottom: -$spacing-12;
-      right: -$spacing-8;
-      width: 50%;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      bottom: -$spacing-16;
-      right: -$spacing-12;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-    }
-  }
-
-  // Adjust media container when secondary image is present
-  &__media:has(&__image-secondary) {
-    margin-bottom: $spacing-12;
-
-    @media (min-width: $breakpoint-md) {
-      margin-bottom: $spacing-16;
+      min-height: 550px;
     }
   }
 
   &__content {
+    background: $gradient-primary;
+    border-radius: $border-radius-2xl;
+    padding: $spacing-10;
+    padding-bottom: $spacing-32;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
     @media (min-width: $breakpoint-md) {
-      padding: $spacing-4 0;
+      padding: $spacing-20;
+      padding-bottom: $spacing-32;
+      margin-left: -$spacing-12;
     }
+  }
+
+  &__graphic {
+    position: absolute;
+    bottom: -$spacing-32;
+    right: -$spacing-12;
+    width: 280px;
+    height: auto;
+    transform: rotate(-90deg);
+    pointer-events: none;
   }
 
   &__headline {
@@ -125,6 +77,33 @@
 
   &__body {
     margin-bottom: $spacing-8;
+  }
+
+  // --------------------------------------------------------------------------
+  // Secondary Image (overlay)
+  // --------------------------------------------------------------------------
+  &__image-secondary {
+    position: absolute;
+    bottom: -$spacing-16;
+    right: $spacing-12;
+    width: 50%;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    z-index: 3;
+    border: 4px solid $color-white;
+    box-shadow: $shadow-xl;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  // Extra bottom space on section when secondary image overflows
+  &:has(.image-text__image-secondary) {
+    padding-bottom: $spacing-40;
   }
 
   // --------------------------------------------------------------------------
@@ -210,79 +189,19 @@
   // Variants
   // --------------------------------------------------------------------------
   &--reversed {
+    .image-text__content {
+      @media (min-width: $breakpoint-md) {
+        margin-left: 0;
+        margin-right: -$spacing-32;
+      }
+    }
+
     .image-text__grid {
       @media (min-width: $breakpoint-md) {
         direction: rtl;
 
         > * {
           direction: ltr;
-        }
-      }
-    }
-
-    .image-text__image-primary {
-      margin-left: auto;
-    }
-
-    .image-text__image-secondary {
-      right: auto;
-      left: $spacing-4;
-
-      @media (min-width: $breakpoint-md) {
-        left: $spacing-8;
-      }
-
-      @media (min-width: $breakpoint-lg) {
-        left: $spacing-4;
-      }
-    }
-
-    .image-text__graphic {
-      // Keep on left side, just flip the graphic
-      transform: translateY(-60%) rotate(-15deg) scaleX(-1);
-    }
-  }
-
-  &--bg-light {
-    background-color: $color-primary-extra-light;
-  }
-
-  &--bg-dark {
-    background-color: $color-bg-dark;
-
-    .image-text__headline {
-      color: $color-white;
-    }
-
-    .image-text__body p {
-      color: $color-neutral-300;
-    }
-  }
-
-  &--bg-gradient {
-    background: linear-gradient(45deg, $color-primary 0%, $color-tertiary 100%);
-
-    .image-text__headline {
-      color: $color-white;
-    }
-
-    .image-text__body p {
-      color: rgba($color-white, 0.9);
-    }
-  }
-
-  // Overlap variant for visual interest
-  &--overlap {
-    .image-text__media {
-      @media (min-width: $breakpoint-md) {
-        &::after {
-          content: '';
-          position: absolute;
-          inset: 20px -20px -20px 20px;
-          background-color: $color-primary;
-          border-radius: $border-radius-xl;
-          z-index: -1;
-          opacity: 0.1;
         }
       }
     }

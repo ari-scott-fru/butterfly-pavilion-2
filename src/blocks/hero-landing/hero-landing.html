@@ -7,8 +7,6 @@
   - hero_body (wysiwyg)
   - hero_primary_button (link)
   - hero_secondary_button (link)
-  - hero_carousel_column1 (gallery)
-  - hero_carousel_column2 (gallery)
 
   Usage:
   <include src="blocks/hero-landing/hero-landing.html">
@@ -16,16 +14,17 @@
     <yield name="body"><p class="lead">Experience the wonder of thousands of free-flying butterflies.</p></yield>
     <yield name="primaryButton"><include src="components/button/button.html"><yield name="text">Get Tickets</yield><yield name="url">/tickets.html</yield><yield name="class">btn--primary</yield></include></yield>
     <yield name="secondaryButton"><include src="components/button/button.html"><yield name="text">Plan Your Visit</yield><yield name="url">/visit.html</yield><yield name="class">btn--outline</yield></include></yield>
-    <yield name="carouselColumn1">
-      <img src="/assets/images/photo1.jpg" alt="Description" class="hero-landing__carousel-image">
-    </yield>
-    <yield name="carouselColumn2">
-      <img src="/assets/images/photo2.jpg" alt="Description" class="hero-landing__carousel-image">
-    </yield>
   </include>
 -->
 <section class="hero-landing" data-animate="fade-in">
-  <img src="/assets/images/client-images/bee-graphic.png" alt="" class="hero-landing__butterfly" aria-hidden="true">
+  <div class="hero-landing__video-bg">
+    <video autoplay muted loop playsinline>
+      <yield name="video">
+        <source src="/assets/images/drove-video.mov" type="video/mp4">
+      </yield>
+    </video>
+  </div>
+  <div class="hero-landing__overlay"></div>
   <div class="container">
     <div class="hero-landing__grid">
       <div class="hero-landing__content">
@@ -57,17 +56,17 @@
         </div>
       </div>
 
-      <div class="hero-landing__carousel">
-        <div class="hero-landing__carousel-column hero-landing__carousel-column--up">
-          <yield name="carouselColumn1">
-            <!-- Images for column 1 (duplicated for seamless loop) -->
-          </yield>
-        </div>
-        <div class="hero-landing__carousel-column hero-landing__carousel-column--down">
-          <yield name="carouselColumn2">
-            <!-- Images for column 2 (duplicated for seamless loop) -->
-          </yield>
-        </div>
+    </div>
+  </div>
+  <div class="hero-landing__stats">
+    <div class="container">
+      <div class="hero-landing__stats-grid">
+        <yield name="stats">
+          <div class="hero-landing__stats-item">
+            <div class="hero-landing__stats-value h2">100+</div>
+            <p class="hero-landing__stats-label">Stat Label</p>
+          </div>
+        </yield>
       </div>
     </div>
   </div>

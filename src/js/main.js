@@ -6,7 +6,7 @@
  */
 
 import { initScrollAnimations, refreshScrollTrigger } from './animations/scroll-animations.js';
-import { initInteractiveAnimations, initParallax, initCounters } from './animations/interactive.js';
+import { initInteractiveAnimations, initParallax, initCounters, initScrollRotate, initScrollTranslateX, initScrollTranslateY } from './animations/interactive.js';
 import { initCarousels } from './animations/carousel.js';
 import { initTestimonials } from './animations/testimonials.js';
 
@@ -74,6 +74,28 @@ function initTextRotate() {
 }
 
 /**
+ * Header scroll effect
+ * Toggles between full-width white and container-width glass on scroll
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const threshold = 50;
+
+  function onScroll() {
+    if (window.scrollY > threshold) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // Check initial state
+}
+
+/**
  * Initialize all modules when DOM is ready
  */
 function init() {
@@ -89,8 +111,18 @@ function init() {
   // Initialize counters if any exist
   initCounters();
 
+  // Initialize scroll-driven rotations
+  initScrollRotate();
+
+  // Initialize scroll-driven translations
+  initScrollTranslateX();
+  initScrollTranslateY();
+
   // Initialize text rotation
   initTextRotate();
+
+  // Initialize header scroll effect
+  initHeaderScroll();
 
   // Initialize carousels
   initCarousels();

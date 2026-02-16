@@ -25,7 +25,7 @@
 
   &__description {
     margin-bottom: $spacing-6;
-    color: $color-neutral-600;
+    // color: $color-neutral-600;
   }
 
   &__cta {
@@ -35,69 +35,28 @@
   }
 
   // --------------------------------------------------------------------------
-  // Bento Grid Layout (3x3 with varying widths)
+  // Grid Layout (3 equal columns)
   // --------------------------------------------------------------------------
   &__grid {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-6;
-  }
-
-  &__row {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: $spacing-6;
 
     @media (min-width: $breakpoint-md) {
-      flex-direction: row;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   // --------------------------------------------------------------------------
-  // Grid Item Sizing
+  // Grid Items
   // --------------------------------------------------------------------------
   &__item {
-    // Ensure cards fill their grid cells
     .card-event {
       height: 100%;
-    }
-
-    // Reduce image height for more compact cards
-    .card-event__image-wrapper {
-      aspect-ratio: 16 / 6;
-    }
-
-    // Mobile: full width
-    flex: 1;
-  }
-
-  // Row 1: wide - medium - medium
-  &__row--1 {
-    @media (min-width: $breakpoint-md) {
-      .card-events__item--1 { flex: 1.5; }
-      .card-events__item--2 {
-        flex: 1;
-        .card-event__image-wrapper { aspect-ratio: 16 / 8; }
-      }
-      .card-events__item--3 {
-        flex: 1;
-        .card-event__image-wrapper { aspect-ratio: 16 / 8; }
-      }
-    }
-  }
-
-  // Row 2: medium - medium - wide
-  &__row--2 {
-    @media (min-width: $breakpoint-md) {
-      .card-events__item--4 {
-        flex: 1;
-        .card-event__image-wrapper { aspect-ratio: 16 / 8; }
-      }
-      .card-events__item--5 {
-        flex: 1;
-        .card-event__image-wrapper { aspect-ratio: 16 / 8; }
-      }
-      .card-events__item--6 { flex: 1.5; }
     }
   }
 }

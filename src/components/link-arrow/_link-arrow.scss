@@ -6,9 +6,9 @@
 .link-arrow {
   display: inline-flex;
   align-items: center;
-  gap: $spacing-2;
+  gap: $spacing-1;
   font-weight: $font-weight-semibold;
-  color: $color-primary;
+  color: $color-neutral-900;
   text-decoration: none;
   transition: gap $transition-fast;
 
@@ -17,6 +17,7 @@
   }
 
   &__icon {
+    font-weight: $font-weight-bold;
     transition: transform $transition-fast;
 
     .link-arrow:hover & {

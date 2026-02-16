@@ -5,74 +5,31 @@
 
 .card-icons {
   position: relative;
+  // border-radius: $border-radius-xl;
+  // padding-left: 40px;
+  // padding-right: 40px;
+  // Extra bottom padding to keep content clear of the wave overlay
+  padding-bottom: 180px;
 
-  &__butterfly {
+  // Bottom wave: SVG with smooth bezier curves for crisp, rounded waves
+  &::after {
+    content: '';
     position: absolute;
-    right: 25%;
-    top: 60%;
-    width: 240px;
-    z-index: 0;
-    pointer-events: none;
-    transform: rotate(-65deg);
-    opacity: 0; // Hidden initially, animated in by JS
-
-    @media (max-width: $breakpoint-md) {
-      display: none;
-    }
-  }
-
-  &__layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-24;
-
-    @media (min-width: $breakpoint-lg) {
-      grid-template-columns: 2fr 3fr;
-      align-items: start;
-    }
-  }
-
-  &__image {
-    border-radius: $border-radius-lg;
-    overflow: hidden;
-    position: relative;
-
-    @media (min-width: $breakpoint-lg) {
-      position: sticky;
-      top: calc(80px + $spacing-6); // Header height + spacing
-    }
-
-    // Hide when empty
-    &:not(:has(*)) {
-      display: none;
-    }
-  }
-
-  &__img {
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-
-    // Stack images for fade effect
-    &:not(:first-child) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-    }
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-8;
+    height: 70px;
+    z-index: 2;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 70' preserveAspectRatio='none'%3E%3Cpath d='M0,42 C80,62 160,8 280,18 C400,28 440,65 580,58 C720,51 760,5 900,12 C1040,19 1060,68 1200,55 C1300,46 1380,15 1440,28 L1440,70 L0,70Z' fill='%23FFFAED'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 
   &__header {
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 550px;
+    margin: 0 auto $spacing-8;
 
     // Hide header when it has no content (both headline and description omitted)
     &:not(:has(*)) {
@@ -98,24 +55,46 @@
     }
   }
 
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-20;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 3fr 4fr;
+      align-items: start;
+    }
+  }
+
+  &__image {
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    height: 600px;
+
+    @media (min-width: $breakpoint-lg) {
+      align-self: center;
+    }
+
+    // Hide when empty (no image passed)
+    &:not(:has(*)) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-6;
 
     @media (min-width: $breakpoint-sm) {
-      grid-template-columns: repeat(6, 1fr);
-
-      // Top row cards span 3 columns each (50%)
-      .card-icon:nth-child(1),
-      .card-icon:nth-child(2) {
-        grid-column: span 3;
-      }
-
-      // Bottom card spans 4 columns (66.67%) aligned right
-      .card-icon:nth-child(3) {
-        grid-column: 3 / 7;
-      }
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

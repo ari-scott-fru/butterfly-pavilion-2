@@ -4,31 +4,20 @@
 @use '../../scss/variables' as *;
 
 .testimonials__card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  visibility: hidden;
-
-  &.is-active {
-    position: relative;
-    visibility: visible;
-  }
+  break-inside: avoid;
+  margin-bottom: $spacing-6;
+  background: $gradient-ivory;
+  border-radius: $border-radius-xl;
+  padding: $spacing-8;
 }
 
-.testimonials__card-content {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all $transition-base;
-
-  .testimonials__card.is-active & {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .testimonials__card.is-prev & {
-    transform: translateX(-30px);
-  }
+.testimonials__card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-6;
+  color: $color-tertiary;
+  font-size: 72px;
 }
 
 .testimonials__quote {
@@ -36,34 +25,29 @@
   padding: 0;
   border-left: none;
 
-  h5 {
-    // font-size: $font-size-xl;
-    line-height: $line-height-normal;
-    color: $color-neutral-700;
+  p {
+    line-height: $line-height-relaxed;
+    // color: $color-neutral-700;
     font-style: italic;
     font-weight: $font-weight-medium;
-
-    @media (min-width: $breakpoint-md) {
-      font-size: $font-size-2xl;
-    }
+    margin: 0;
   }
 }
 
 .testimonials__author {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: $spacing-1;
 }
 
 .testimonials__author-name {
   font-family: $font-family-heading;
   font-weight: $font-weight-semibold;
-  font-size: $font-size-lg;
+  font-size: $font-size-base;
   color: $color-neutral-900;
 }
 
 .testimonials__author-role {
   font-size: $font-size-sm;
-  color: $color-neutral-500;
+  color: $color-neutral-700;
 }

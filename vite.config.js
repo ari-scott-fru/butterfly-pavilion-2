@@ -6,21 +6,21 @@ import { readdirSync } from 'fs';
 
 const __dirname = import.meta.dirname;
 
-// Get all HTML pages from src/ root
+// Get all HTML pages from src/pages
 function getPageInputs() {
-  const srcDir = resolve(__dirname, 'src');
+  const pagesDir = resolve(__dirname, 'src/pages');
   const inputs = {};
 
   try {
-    const files = readdirSync(srcDir);
+    const files = readdirSync(pagesDir);
     files.forEach(file => {
       if (file.endsWith('.html')) {
         const name = file.replace('.html', '');
-        inputs[name] = resolve(srcDir, file);
+        inputs[name] = resolve(pagesDir, file);
       }
     });
   } catch (e) {
-    // No HTML files found
+    // Pages directory doesn't exist yet
   }
 
   return inputs;
@@ -41,7 +41,7 @@ function posthtmlPlugin() {
       server.watcher.add(watchDirs);
 
       server.watcher.on('change', (file) => {
-        if (file.endsWith('.html') && (file.includes('blocks') || file.includes('components') || file.includes('layouts'))) {
+        if (file.endsWith('.html') && !file.includes('src/pages')) {
           // Trigger full page reload when includes change
           server.ws.send({ type: 'full-reload' });
         }
@@ -86,7 +86,7 @@ export default defineConfig({
   },
 
   server: {
-    open: '/index.html'
+    open: '/pages/index.html'
   },
 
   build: {
